@@ -10,7 +10,6 @@ import java.util.*;
  * version 1.0
  * date: 22/04/2015
  */
-//grdgrdgrdgrdgrdgdr
 public class Event
 {
   
