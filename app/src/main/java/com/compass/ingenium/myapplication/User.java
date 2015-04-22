@@ -10,10 +10,10 @@ import java.util.ArrayList;
 public class User {
     protected String username, password, eMail;
     protected Image profilePicture;
-    //protected Grove grove;
-    //protected ArrayList<Leaf> myLeafs;
-    //protected ArrayList<Post> myPosts;
-    //protected ArrayList<Pigment> myPigments;
+    protected Grove grove;
+    protected ArrayList<Leaf> myLeafs;
+    protected ArrayList<Post> myPosts;
+    protected ArrayList<Pigment> myPigments;
 
     public User( String username, String password, String eMail){
         this.username = username;
