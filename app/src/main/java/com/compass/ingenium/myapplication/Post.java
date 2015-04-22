@@ -6,7 +6,6 @@ package com.compass.ingenium.myapplication;
  * Date: 22/04/2015
  * Version: 1.0
  * By Ertugrul Akay (Kaxell)
- *
  */
 public class Post {
 
@@ -18,10 +17,10 @@ public class Post {
 
 
     public Post(){
-        title="Sample";
-        description="Castigat ridendo mores.Corvus oculum corvi non eruit.";
+        title= "Sample";
+        description= "Castigat ridendo mores. Corvus oculum corvi non eruit.";
         creator= new User("Sample User","1234", "sample@sample.com");
-        content=null;
+        content= null;
     }
     public Post(String title, String description, User creator, Object Content) {
         this.title = title;
@@ -33,8 +32,11 @@ public class Post {
 
     //Get Methods
     public String getTitle(){return title;}
+
     public String getDescription(){return description;}
+
     public User getCreator(){return creator;}
+
     public Object getContent(){return content;}
 
     //Set Methods

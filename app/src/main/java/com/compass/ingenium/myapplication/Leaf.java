@@ -63,7 +63,7 @@ public class Leaf
   }
   
   //posts methods
-  public public ArrayList<Post> getPosts()
+  public ArrayList<Post> getPosts()
   {
     return posts;
   }
