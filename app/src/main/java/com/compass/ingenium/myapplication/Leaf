@@ -1,0 +1,110 @@
+//drawer
+//profile, settings, grove, options, leaf, 
+
+import java.util.ArrayList;
+public class Leaf
+{
+  //variables
+  String name;
+  String description;
+  User creator;
+  ArrayList<Post> posts = new ArrayList<Post>();
+  ArrayList<User> members = new ArrayList<User>();
+  Pigment pigment;
+  
+  //constructor
+  public Leaf(User creator)
+  {
+    name = "";
+    decription = "";
+    this.creator = creator;
+  }
+  
+  //methods
+  //name methods
+  public String getName()
+  {
+    return name;
+  }
+  
+  public void setName(String name)
+  {
+    this.name = name;
+  }
+  
+  //description methods
+  public String getDescription
+  {
+    return description
+  }
+  
+  public void setDescription(String description)
+  {
+    this.description = description
+  }
+  
+  //creator methods
+  public String getCreator()
+  {
+    return creator;
+  }
+  
+  //pigment methods
+  public Pigment getPigment()
+  {
+    return pigment;
+  }
+  
+  public void setPigment(Pigment pigment)
+  {
+    this.pigment = pigment;
+  }
+  
+  //posts methods
+  public public ArrayList<Post> getPosts()
+  {
+    return posts;
+  }
+  
+  public ArrayList<Post> addPost(Post post)
+  {
+    posts.add(post);
+  }
+  
+  public ArrayList<Post> removePost(Post post)
+  {
+    boolean exitLoop = true;
+    for(int i = 0 ; i < posts.size() && exitLoop == false  ; i++)
+    {
+      if(posts.get(i).equals(post))
+      {
+        posts.remove(i);
+        exitLoop = false;
+      }
+    }
+  }
+  
+  //members methods
+  public ArrayList<User> getMembers()
+  {
+    return members;
+  }
+  
+  public ArrayList<User> addMember(User member)
+  {
+    members.add(member);
+  }
+  
+  public ArrayList<User> removePost(User member)
+  {
+    boolean exitLoop = true;
+    for(int i = 0 ; i < posts.size() && exitLoop == false  ; i++)
+    {
+      if(members.get(i).equals(member))
+      {
+        members.remove(i);
+        exitLoop = false;
+      }
+    }
+  }
+}
