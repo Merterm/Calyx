@@ -42,7 +42,7 @@ public class Leaf
   
   public void setDescription(String description)
   {
-    this.description = description
+    this.description = description;
   }
   
   //creator methods

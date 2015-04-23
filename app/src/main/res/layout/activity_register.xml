@@ -62,9 +62,9 @@ android:padding="10dp" >
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dip"
-        android:background="#ea4c88"
+        android:background="#ffea00"
         android:text="@string/btn_register"
-        android:textColor="@color/white" />
+        android:textColor="@color/btn_login" />
 
     <!-- Link to Login Screen -->
 
@@ -73,9 +73,10 @@ android:padding="10dp" >
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dip"
-        android:background="@null"
+        android:background="@color/btn_login"
         android:text="@string/btn_link_to_login"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="15dp" />
+        android:textSize="15sp" />
+</LinearLayout>
 </LinearLayout>
