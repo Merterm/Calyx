@@ -29,7 +29,7 @@ public class GroveController extends ActionBarActivity{
         setContentView(R.layout.activity_grove);
         grove.addTree( tree);
 
-        adapter= new ArrayAdapter<Tree>(listActivity,
+        adapter= new ArrayAdapter<>(listActivity,
                 android.R.layout.simple_list_item_1,
                 grove.getTrees());
         listActivity.setListAdapter(adapter);
