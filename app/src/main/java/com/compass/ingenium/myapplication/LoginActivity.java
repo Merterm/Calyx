@@ -17,6 +17,9 @@ package com.compass.ingenium.myapplication;
     import android.widget.Toast;
 
     import com.android.volley.*;
+    import com.android.volley.toolbox.StringRequest;
+
+    import helper.SessionManager;
     /*import com.android.volley.Request.Method;
     import com.android.volley.Response;
     import com.android.volley.VolleyError;
@@ -101,7 +104,7 @@ package com.compass.ingenium.myapplication;
             pDialog.setMessage("Logging in ...");
             showDialog();
 
-            StringRequest strReq = new StringRequest(Method.POST,
+            StringRequest strReq = new StringRequest(Request.Method.POST,
                     AppConfig.URL_REGISTER, new Response.Listener<String>() {
 
                 @Override
