@@ -1,9 +1,4 @@
 package com.compass.ingenium.myapplication;
-//    package info.androidhive.loginandregistration;
-
-   // import info.androidhive.loginandregistration.app.AppConfig;
-   // import info.androidhive.loginandregistration.app.AppController;
-   // import info.androidhive.loginandregistration.helper.SessionManager;
 
     import java.util.HashMap;
     import java.util.Map;
@@ -21,10 +16,11 @@ package com.compass.ingenium.myapplication;
     import android.widget.EditText;
     import android.widget.Toast;
 
-    import com.android.volley.Request.Method;
+    import com.android.volley.*;
+    /*import com.android.volley.Request.Method;
     import com.android.volley.Response;
     import com.android.volley.VolleyError;
-    import com.android.volley.toolbox.StringRequest;
+    import com.android.volley.toolbox.StringRequest;*/
 
     public class LoginActivity extends Activity {
         // LogCat tag

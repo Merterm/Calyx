@@ -3,7 +3,7 @@ package com.compass.ingenium.myapplication;
 import java.util.ArrayList;
 
 /**
- * Created by nurteninan on 22.4.2015.
+ * Created by mertinan on 22.4.2015.
  */
 public class DayPigment extends Pigment{
     ArrayList<Event> events;
@@ -20,7 +20,7 @@ public class DayPigment extends Pigment{
     }
 
     @Override
-    public void addEvent() {
+    public void addEvent(Event event) {
         events.add(event);
     }
 
