@@ -12,4 +12,5 @@
     <string name="btn_logout">LOGOUT</string>
     <string name="name">Fullname</string>
     <string name="action_settings">Action Settings</string>
+    <string name="calyx_logo">Calyx Logo</string>
 </resources>

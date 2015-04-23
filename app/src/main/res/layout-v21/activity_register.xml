@@ -15,7 +15,8 @@ android:padding="10dp"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="60dp"
         android:id="@+id/imageView"
-        android:background="@drawable/c"/>
+        android:background="@drawable/c"
+        android:contentDescription="@string/calyx_logo" />
 
     <LinearLayout
     android:layout_width="fill_parent"
