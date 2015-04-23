@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="login_yellow">#ffea00</color>
+    <color name="register_background">#a7ade395</color>
 </resources>
