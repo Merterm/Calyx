@@ -1,18 +1,38 @@
 package com.compass.ingenium.myapplication;
 
+import android.app.ListActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+
+import com.compass.ingenium.myapplication.modelclasses.Grove;
+import com.compass.ingenium.myapplication.modelclasses.Tree;
+import com.compass.ingenium.myapplication.modelclasses.User;
 
 
-public class GroveController extends ActionBarActivity {
+public class GroveController extends ActionBarActivity{
+
+    // Temporary properties
+    User user = new User("Merterm", "12345", "mertincek@hotmail.com");
+    Grove grove = new Grove();
+    Tree tree = new Tree( user, "Temporary Tree");
+
+    //Properties
+    ListActivity listActivity = new ListActivity();
+    ArrayAdapter<Tree> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grove);
-        User user = new User("Merterm", "12345", "mertincek@hotmail.com");
+        grove.addTree( tree);
+
+        adapter= new ArrayAdapter<Tree>(listActivity,
+                android.R.layout.simple_list_item_1,
+                grove.getTrees());
+        listActivity.setListAdapter(adapter);
     }
 
 

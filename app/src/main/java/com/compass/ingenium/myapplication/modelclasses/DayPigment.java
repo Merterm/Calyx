@@ -1,11 +1,11 @@
-package com.compass.ingenium.myapplication;
+package com.compass.ingenium.myapplication.modelclasses;
 
 import java.util.ArrayList;
 
 /**
  * Created by mertinan on 22.4.2015.
  */
-public class DayPigment extends Pigment{
+public class DayPigment extends Pigment {
     ArrayList<Event> events;
 
     public DayPigment(ArrayList<Event> events){

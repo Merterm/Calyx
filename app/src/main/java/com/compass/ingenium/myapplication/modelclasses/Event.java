@@ -1,4 +1,4 @@
-package com.compass.ingenium.myapplication;
+package com.compass.ingenium.myapplication.modelclasses;
 
 import java.sql.Time;
 import java.util.*;

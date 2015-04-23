@@ -1,4 +1,4 @@
-package com.compass.ingenium.myapplication;
+package com.compass.ingenium.myapplication.modelclasses;
 
 /**
  * Description: The Post Class. It contains the information when a user creates or shows a post.

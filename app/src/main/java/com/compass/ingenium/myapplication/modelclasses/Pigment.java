@@ -1,4 +1,6 @@
-package com.compass.ingenium.myapplication;
+package com.compass.ingenium.myapplication.modelclasses;
+
+import com.compass.ingenium.myapplication.modelclasses.Event;
 
 /**
  * Created by mertinan on 22.4.2015.

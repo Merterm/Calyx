@@ -1,4 +1,4 @@
-package com.compass.ingenium.myapplication;
+package com.compass.ingenium.myapplication.modelclasses;
 
 import java.util.ArrayList;
 /**
@@ -26,7 +26,17 @@ public class Tree
           members = new ArrayList<>();
         }
 
-        // methods
+    public Tree (User creator, String description)
+    {
+        CREATOR = creator;
+        this.description = description;
+        leafs = new ArrayList<>();
+        members = new ArrayList<>();
+    }
+
+
+
+    // methods
         
         //get methods
         public User getCreator()

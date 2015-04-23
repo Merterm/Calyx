@@ -1,8 +1,6 @@
-package com.compass.ingenium.myapplication;
+package com.compass.ingenium.myapplication.modelclasses;
 //drawer
 //profile, settings, grove, options, leaf, 
-
-import com.compass.ingenium.myapplication.User;
 
 import java.util.ArrayList;
 public class Leaf

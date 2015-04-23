@@ -1,4 +1,4 @@
-package com.compass.ingenium.myapplication;
+package com.compass.ingenium.myapplication.modelclasses;
 
 import java.util.ArrayList;
 
@@ -24,8 +24,12 @@ public class Grove{
     {
         return trees.get(i);
     }
+
+    public ArrayList<Tree> getTrees() {
+        return trees;
+    }
     
-    public void addTree( Tree tree)
+    public void addTree(Tree tree)
     {
         trees.add( tree);
     }
