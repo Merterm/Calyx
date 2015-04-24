@@ -1,5 +1,7 @@
 package com.compass.ingenium.myapplication.modelclasses;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.ArrayList;
 /**
  * name: Tree
@@ -10,81 +12,88 @@ import java.util.ArrayList;
  */ 
 public class Tree
 {
-        // constants
-        protected final User CREATOR;
-    
-        // properties
-        protected String description;
-        protected ArrayList<Leaf> leafs;
-        protected ArrayList<User> members;
-        
-        // constructors
-        public Tree (User creator)
-        {
-          CREATOR = creator;
-          leafs = new ArrayList<>();
-          members = new ArrayList<>();
-        }
+    // constants
+    protected final User CREATOR;
 
-    public Tree (User creator, String description)
-    {
+    // properties
+    protected String description;
+    protected ArrayList<Leaf> leafs;
+    protected ArrayList<User> members;
+    protected Drawable treeImage;
+
+    // constructors
+    public Tree (User creator){
+        CREATOR = creator;
+        leafs = new ArrayList<>();
+        members = new ArrayList<>();
+        treeImage = null;
+    }
+
+    public Tree (User creator, String description){
         CREATOR = creator;
         this.description = description;
         leafs = new ArrayList<>();
         members = new ArrayList<>();
+        treeImage = null;
     }
-
-
 
     // methods
         
-        //get methods
-        public User getCreator()
-        {
-          return CREATOR;
-        }
-        
-        public String getDescription()
-        {
-          return description;
-        }
-        
-        public ArrayList getLeafs()
-        {
-          return leafs;
-        }
-        
-        public ArrayList getMembers()
-        {
-          return members;
-        }
-        
-        //set methods
-        public void setDescription (String description)
-        {
-          this.description = description;
-        }
-        
-        //add Methods
-        public void addMember (User member)
-        {
-          members.add(member);
-        }
-        
-        public void addLeaf (Leaf leaf)
-        {
-          leafs.add(leaf);
-        }
-        
-        //remove methods
-        public void removeLeaf (int index)
-        {
-          leafs.remove(index);
-        }
-        
-        public void removeMember (int index)
-        {
-          members.remove(index);
-        }
-    
+    //get methods
+    public User getCreator()
+    {
+      return CREATOR;
+    }
+
+    public String getDescription()
+    {
+      return description;
+    }
+
+    public ArrayList getLeafs()
+    {
+      return leafs;
+    }
+
+    public ArrayList getMembers()
+    {
+      return members;
+    }
+
+    public Drawable getTreeImage() {
+        return treeImage;
+    }
+
+    //set methods
+    public void setDescription (String description)
+    {
+      this.description = description;
+    }
+
+    public void setTreeImage(Drawable treeImage) {
+        this.treeImage = treeImage;
+    }
+
+    //add Methods
+    public void addMember (User member)
+    {
+      members.add(member);
+    }
+
+    public void addLeaf (Leaf leaf)
+    {
+      leafs.add(leaf);
+    }
+
+    //remove methods
+    public void removeLeaf (int index)
+    {
+      leafs.remove(index);
+    }
+
+    public void removeMember (int index)
+    {
+      members.remove(index);
+    }
+
 }
