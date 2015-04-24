@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">Calyx</string>
+    <string name="btn_link_to_login">რეგისტრირებული ხართ? შესვლა</string>
+    <string name="btn_link_to_register">წევრი არ არი ხართ? იწერთ</string>
+    <string name="btn_login">შესვლა</string>
+    <string name="btn_logout">გამოსვლის</string>
+    <string name="btn_register">რეგისტრაცია</string>
+    <string name="hello_world">გამარჯობა მსოფლიო</string>
+    <string name="hint_email">ელ</string>
+    <string name="hint_name">სახელი</string>
+    <string name="hint_password">პაროლი</string>
+    <string name="name">სახელი</string>
+    <string name="title_activity_post">პოსტი</string>
+    <string name="welcome">გამარჯობა</string>
+
+</resources>
