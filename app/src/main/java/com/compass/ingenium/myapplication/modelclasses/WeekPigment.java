@@ -2,7 +2,7 @@ package com.compass.ingenium.myapplication.modelclasses;
 
 
 /**
- * Created by nurteninan on 22.4.2015.
+ * Created by Mert Inan on 22.4.2015.
  */
 public class WeekPigment extends Pigment {
     DayPigment[] dayPigments;
@@ -13,14 +13,24 @@ public class WeekPigment extends Pigment {
         this.dayPigments = dayPigments;
     }
 
-    @Override
+    /*@Override
     public Event getEvent(int dayLocation, int eventLocation) {
         return dayPigments[dayLocation].getEvent(eventLocation);
+    }*/
+
+    /*@Override
+    public void addEvent(Event event, int dayLocation) {
+        dayPigments[dayLocation].addEvent(event);
+    }*/
+
+    @Override
+    public Event getEvent(int location) {
+        return null;
     }
 
     @Override
-    public void addEvent(Event event, int dayLocation) {
-        dayPigments[dayLocation].addEvent(event);
+    public void addEvent(Event event) {
+
     }
 
     @Override

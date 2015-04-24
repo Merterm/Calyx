@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import helper.SQLiteHandler;
 import helper.SessionManager;
 
 public class MainActivity extends Activity {
