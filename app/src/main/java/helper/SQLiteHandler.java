@@ -14,7 +14,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class SQLiteHandler {
+public class SQLiteHandler extends SQLiteOpenHelper{
     private static final String TAG = SQLiteHandler.class.getSimpleName();
 
     // All Static variables
@@ -35,7 +35,7 @@ public class SQLiteHandler {
     private static final String KEY_CREATED_AT = "created_at";
 
     public SQLiteHandler(Context context) {
-        super(context, this.DATABASE_NAME, null, this.DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     // Creating Tables
