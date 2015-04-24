@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">Kaliks</string>
+    <string name="btn_link_to_login">Üye Misiniz? Giriş Yapın</string>
+    <string name="btn_link_to_register">Üye Değil Misiniz? Kaydolun</string>
+    <string name="btn_login">GİRİŞ</string>
+    <string name="btn_logout">ÇIKIŞ</string>
+    <string name="btn_register">ÜYE OL</string>
+    <string name="calyx_logo">Kaliks Logo</string>
+    <string name="hello_world">Merhaba Dünya</string>
+    <string name="hint_email">E-Posta</string>
+    <string name="hint_name">Ad Soyad</string>
+    <string name="hint_password">Şifre</string>
+    <string name="name">Ad Soyad</string>
+    <string name="title_activity_post">Gönderi</string>
+    <string name="welcome">Hoşgeldiniz</string>
+
+</resources>

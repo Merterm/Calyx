@@ -38,6 +38,10 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".Post"
+            android:label="@string/title_activity_post" >
+        </activity>
     </application>
 
 </manifest>

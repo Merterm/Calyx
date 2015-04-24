@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">Calyx</string>
+    <string name="btn_link_to_login">Bereits Registriert? Einloggen</string>
+    <string name="btn_link_to_register">Noch kein Mitglied? Registrieren</string>
+    <string name="btn_login">Einloggen</string>
+    <string name="btn_logout">Abmelden</string>
+    <string name="btn_register">Registrieren</string>
+    <string name="hello_world">Hallo Welt</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_password">Passwort</string>
+    <string name="name">Name</string>
+    <string name="title_activity_post">"Postsache "</string>
+    <string name="welcome">Willkommen</string>
+
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">Calyx</string>
+    <string name="btn_link_to_login">"Registeré? Entrer"</string>
+    <string name="btn_link_to_register">N\'est pas Member? Enregistrer</string>
+    <string name="btn_login">Entrer</string>
+    <string name="btn_logout">Déconnecter</string>
+    <string name="btn_register">Enregistrer</string>
+    <string name="calyx_logo">Logo de Calyx</string>
+    <string name="hello_world">Bonjour Monde!</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_name">Nom</string>
+    <string name="hint_password">Mot De Pass</string>
+    <string name="name">Nom</string>
+    <string name="title_activity_post">Le post</string>
+    <string name="welcome">Bienvenue</string>
+
+</resources>

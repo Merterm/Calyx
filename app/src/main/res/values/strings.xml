@@ -13,4 +13,7 @@
     <string name="name">Fullname</string>
     <string name="action_settings">Action Settings</string>
     <string name="calyx_logo">Calyx Logo</string>
+    <string name="title_activity_post">Post</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

@@ -14,7 +14,7 @@ public class Event
 {
   
   // properties
-  protected Time startTime;
+  protected Time startTime; //there's no such class, should be replaced
   protected Time endTime;
   protected Date date;
   protected String description;

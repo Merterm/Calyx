@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">カリックス</string>
+    <string name="btn_login">ロギン</string>
+    <string name="hint_email">イーメイル</string>
+    <string name="hint_name">名前</string>
+    <string name="hint_password">パスオード</string>
+    <string name="name">名前</string>
+    <string name="welcome">ようこそ</string>
+    <string name="btn_link_to_login">既にメンバー？ロギン</string>
+    <string name="btn_link_to_register">メンバーじゃないの？登録</string>
+    <string name="btn_logout">ログアウト</string>
+    <string name="btn_register">登録</string>
+    <string name="calyx_logo">カリックスLOGO</string>
+    <string name="hello_world">今日は世界</string>
+    <string name="title_activity_post">送信</string>
+
+</resources>
