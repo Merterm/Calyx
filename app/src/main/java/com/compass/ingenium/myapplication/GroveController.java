@@ -3,6 +3,7 @@ package com.compass.ingenium.myapplication;
 import android.app.ListActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,6 +31,12 @@ public class GroveController extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grove);
         grove.addTree( tree);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new GroveRecycler(grove.getTrees());
+        recyclerView.setAdapter(adapter);
     }
 
 
