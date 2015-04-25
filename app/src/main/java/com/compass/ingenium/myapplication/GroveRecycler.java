@@ -37,12 +37,13 @@ public class GroveRecycler extends RecyclerView.Adapter<GroveRecycler.ViewHolder
 
     @Override
     public void onBindViewHolder(GroveRecycler.ViewHolder viewHolder, int i) {
+        //Setting text for title, creator, description, leaf no of the Tree in the grove list
         viewHolder.titleView.setText( groveData.get(i).getTitle());
         viewHolder.creatorView.setText( groveData.get(i).getCreator().getUsername());
         viewHolder.descriptionView.setText( groveData.get(i).getDescription());
         viewHolder.leafNoView.setText( groveData.get(i).getLeafs().size() + " Leaves");
-        viewHolder.imageView.setImageDrawable( groveData.get(i).getTreeImage());
-
+        //Setting the background image of card to the image of the tree
+        viewHolder.imageView.setBackground(groveData.get(i).getTreeImage());
     }
 
     @Override

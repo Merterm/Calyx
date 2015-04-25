@@ -5,11 +5,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 
 import com.compass.ingenium.myapplication.modelclasses.Grove;
+import com.compass.ingenium.myapplication.modelclasses.Leaf;
 import com.compass.ingenium.myapplication.modelclasses.Tree;
 import com.compass.ingenium.myapplication.modelclasses.User;
 
@@ -19,7 +21,7 @@ public class GroveController extends ActionBarActivity{
     // Temporary properties
     User user = new User("Merterm", "12345", "mertincek@hotmail.com");
     Grove grove = new Grove();
-    Tree tree = new Tree( user, "Temporary Tree");
+    Tree tree = new Tree( user, "Temporary Tree", "This tree has been created temporarily.");
     Tree tree2 = new Tree( user, "Mert's Tree");
 
     //Properties
@@ -31,10 +33,28 @@ public class GroveController extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grove);
+
+        //Tree properties
+        tree.addLeaf( new Leaf(user));
+        tree2.addLeaf( new Leaf(user));
+        tree.setTreeImage(getResources().getDrawable(R.drawable.tree1));
+        tree2.setTreeImage( getResources().getDrawable(R.drawable.tree2));
+
+        //Grove Properties
         grove.addTree( tree);
         grove.addTree( tree2);
+
+        //Toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle( "Grove");
+        toolbar.setTitleTextColor( getResources().getColor(R.color.white));
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
+
+        //Recycler
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
+        //recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new GroveRecycler(grove.getTrees());
