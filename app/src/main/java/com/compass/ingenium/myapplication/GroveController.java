@@ -20,6 +20,7 @@ public class GroveController extends ActionBarActivity{
     User user = new User("Merterm", "12345", "mertincek@hotmail.com");
     Grove grove = new Grove();
     Tree tree = new Tree( user, "Temporary Tree");
+    Tree tree2 = new Tree( user, "Mert's Tree");
 
     //Properties
     private RecyclerView recyclerView;
@@ -31,6 +32,7 @@ public class GroveController extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grove);
         grove.addTree( tree);
+        grove.addTree( tree2);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);

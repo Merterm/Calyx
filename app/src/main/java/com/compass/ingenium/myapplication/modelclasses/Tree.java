@@ -16,7 +16,7 @@ public class Tree
     protected final User CREATOR;
 
     // properties
-    protected String description;
+    protected String description, title;
     protected ArrayList<Leaf> leafs;
     protected ArrayList<User> members;
     protected Drawable treeImage;
@@ -29,8 +29,17 @@ public class Tree
         treeImage = null;
     }
 
-    public Tree (User creator, String description){
+    public Tree (User creator, String title){
         CREATOR = creator;
+        this.title = title;
+        leafs = new ArrayList<>();
+        members = new ArrayList<>();
+        treeImage = null;
+    }
+
+    public Tree (User creator, String title, String description) {
+        CREATOR = creator;
+        this.title = title;
         this.description = description;
         leafs = new ArrayList<>();
         members = new ArrayList<>();
@@ -43,6 +52,10 @@ public class Tree
     public User getCreator()
     {
       return CREATOR;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public String getDescription()
@@ -65,13 +78,17 @@ public class Tree
     }
 
     //set methods
-    public void setDescription (String description)
+    public void setDescription( String description)
     {
       this.description = description;
     }
 
-    public void setTreeImage(Drawable treeImage) {
+    public void setTreeImage( Drawable treeImage) {
         this.treeImage = treeImage;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     //add Methods
