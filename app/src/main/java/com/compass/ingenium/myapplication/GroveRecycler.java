@@ -39,6 +39,8 @@ public class GroveRecycler extends RecyclerView.Adapter<GroveRecycler.ViewHolder
     public void onBindViewHolder(GroveRecycler.ViewHolder viewHolder, int i) {
         viewHolder.titleView.setText( groveData.get(i).getTitle());
         viewHolder.creatorView.setText( groveData.get(i).getCreator().getUsername());
+        viewHolder.descriptionView.setText( groveData.get(i).getDescription());
+        viewHolder.leafNoView.setText( groveData.get(i).getLeafs().size() + " Leaves");
         viewHolder.imageView.setImageDrawable( groveData.get(i).getTreeImage());
 
     }
@@ -51,8 +53,7 @@ public class GroveRecycler extends RecyclerView.Adapter<GroveRecycler.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
         //Properties
-        protected TextView titleView;
-        protected TextView creatorView;
+        protected TextView titleView, creatorView, descriptionView, leafNoView;
         protected ImageView imageView;
 
         //Constructor
@@ -60,6 +61,8 @@ public class GroveRecycler extends RecyclerView.Adapter<GroveRecycler.ViewHolder
             super(itemView);
             titleView =  (TextView) itemView.findViewById(R.id.title_item);
             creatorView = (TextView) itemView.findViewById(R.id.creator_item);
+            descriptionView = (TextView) itemView.findViewById(R.id.description_item);
+            leafNoView = (TextView) itemView.findViewById(R.id.leaf_number_item);
             imageView = (ImageView) itemView.findViewById(R.id.image_item);
         }
     }
