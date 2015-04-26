@@ -67,6 +67,13 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         recyclerView.setLayoutManager(layoutManager);
         adapter = new GroveRecycler(grove.getTrees());
         recyclerView.setAdapter(adapter);
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(context, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
 
         //Instantiating editText items in dialog
         inputTreeTitle = (EditText) findViewById(R.id.new_tree_title);
@@ -79,9 +86,6 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
                 // Create an instance of the dialog fragment and show it
                 DialogFragment dialog = new NewTreeDialogFragment();
                 dialog.show(getSupportFragmentManager(), "NewTreeDialogFragment");
-
-                newTreeTitle = inputTreeTitle.getText().toString();
-                newTreeDescription = inputTreeDescription.getText().toString();
 
                 Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
             }
