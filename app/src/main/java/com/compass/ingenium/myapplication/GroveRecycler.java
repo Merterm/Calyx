@@ -41,7 +41,13 @@ public class GroveRecycler extends RecyclerView.Adapter<GroveRecycler.ViewHolder
         viewHolder.titleView.setText( groveData.get(i).getTitle());
         viewHolder.creatorView.setText( groveData.get(i).getCreator().getUsername());
         viewHolder.descriptionView.setText( groveData.get(i).getDescription());
-        viewHolder.leafNoView.setText( groveData.get(i).getLeafs().size() + " Leaves");
+        if (groveData.get(i).getLeafs().size() > 1 ) {
+            viewHolder.leafNoView.setText(groveData.get(i).getLeafs().size() + " Leaves");
+        }
+        else
+        {
+            viewHolder.leafNoView.setText(groveData.get(i).getLeafs().size() + " Leaf");
+        }
         //Setting the background image of card to the image of the tree
         viewHolder.imageView.setBackground(groveData.get(i).getTreeImage());
     }

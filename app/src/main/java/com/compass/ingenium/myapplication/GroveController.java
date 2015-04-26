@@ -32,6 +32,10 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+    protected EditText inputTreeTitle;
+    protected EditText inputTreeDescription;
+    protected String newTreeTitle;
+    protected String newTreeDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,10 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         adapter = new GroveRecycler(grove.getTrees());
         recyclerView.setAdapter(adapter);
 
+        //Instantiating editText items in dialog
+        inputTreeTitle = (EditText) findViewById(R.id.new_tree_title);
+        inputTreeDescription = (EditText) findViewById(R.id.new_tree_description);
+
         //Floating Action Button
         findViewById(R.id.add_fab).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +79,9 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
                 // Create an instance of the dialog fragment and show it
                 DialogFragment dialog = new NewTreeDialogFragment();
                 dialog.show(getSupportFragmentManager(), "NewTreeDialogFragment");
+
+                newTreeTitle = inputTreeTitle.getText().toString();
+                newTreeDescription = inputTreeDescription.getText().toString();
 
                 Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
             }
@@ -102,10 +113,15 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
 
     @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
-        final EditText inputTreeTitle = (EditText) findViewById(R.id.new_tree_title);
-        final EditText inputTreeDescription = (EditText) findViewById(R.id.new_tree_description);
-        Tree createdTree = new Tree(user, inputTreeTitle.getText().toString(), inputTreeDescription.getText().toString());
-        grove.addTree( createdTree);
+        if ( newTreeTitle != null && newTreeDescription != null) {
+            Tree createdTree = new Tree(user, newTreeTitle, newTreeDescription);
+            grove.addTree(createdTree);
+        }
+        else {
+            Toast.makeText(getApplicationContext(),
+                    "Please enter the title and description!", Toast.LENGTH_LONG)
+                    .show();
+        }
     }
 
     @Override

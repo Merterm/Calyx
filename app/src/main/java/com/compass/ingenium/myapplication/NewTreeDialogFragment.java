@@ -51,10 +51,6 @@ public class NewTreeDialogFragment extends DialogFragment {
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
-        //Properties
-        final EditText inputTreeTitle = (EditText) getView().findViewById(R.id.new_tree_title);
-        final EditText inputTreeDescription = (EditText) getView().findViewById(R.id.new_tree_description);
-
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
         builder.setView(inflater.inflate(R.layout.new_tree_dialog, null))
