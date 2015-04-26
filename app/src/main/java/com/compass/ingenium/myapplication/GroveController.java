@@ -1,5 +1,6 @@
 package com.compass.ingenium.myapplication;
 
+import android.support.v4.app.DialogFragment;
 import android.app.ListActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.compass.ingenium.myapplication.modelclasses.Grove;
@@ -18,7 +20,7 @@ import com.compass.ingenium.myapplication.modelclasses.Tree;
 import com.compass.ingenium.myapplication.modelclasses.User;
 
 
-public class GroveController extends ActionBarActivity{
+public class GroveController extends ActionBarActivity implements NewTreeDialogFragment.TreeDialogListener{
 
     // Temporary properties
     User user = new User("Merterm", "12345", "mertincek@hotmail.com");
@@ -66,6 +68,9 @@ public class GroveController extends ActionBarActivity{
         findViewById(R.id.add_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Create an instance of the dialog fragment and show it
+                DialogFragment dialog = new NewTreeDialogFragment();
+                dialog.show(getSupportFragmentManager(), "NewTreeDialogFragment");
 
                 Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
             }
@@ -93,5 +98,18 @@ public class GroveController extends ActionBarActivity{
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        final EditText inputTreeTitle = (EditText) findViewById(R.id.new_tree_title);
+        final EditText inputTreeDescription = (EditText) findViewById(R.id.new_tree_description);
+        Tree createdTree = new Tree(user, inputTreeTitle.getText().toString(), inputTreeDescription.getText().toString());
+        grove.addTree( createdTree);
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+
     }
 }
