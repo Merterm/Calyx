@@ -2,6 +2,7 @@
 <RelativeLayout
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content">
 
     <android.support.v7.widget.Toolbar
@@ -9,7 +10,19 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/actionbar_blue"/>
+        android:background="@color/actionbar_blue"
+        android:elevation="10dp"/>
+
+    <com.getbase.floatingactionbutton.AddFloatingActionButton
+        android:id="@+id/add_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_colorNormal="@color/login_yellow"
+        fab:fab_plusIconColor="@color/lbl_name"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:elevation="10dp"/>
 
     <android.support.v7.widget.RecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +31,6 @@
         android:layout_height="match_parent"
         android:id="@+id/recycler_view"
         tools:context=".MainActivity"
-        android:weightSum="1"
-        android:layout_below="@+id/toolbar" />
+        android:weightSum="1" />
 
 </RelativeLayout>

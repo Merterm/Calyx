@@ -14,5 +14,6 @@
     <string name="calyx_logo">カリックスLOGO</string>
     <string name="hello_world">今日は世界</string>
     <string name="title_activity_post">送信</string>
+    <string name="new_tree">新しい木</string>
 
 </resources>

@@ -14,5 +14,6 @@
     <string name="name">Nom</string>
     <string name="title_activity_post">Le post</string>
     <string name="welcome">Bienvenue</string>
+    <string name="new_tree">L\'Arbre Nouveau</string>
 
 </resources>

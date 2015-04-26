@@ -2,11 +2,16 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <item name="android:centerColor">@color/white</item>
         <item name="colorPrimary">@color/navigation_bar_blue</item>
         <item name="colorPrimaryDark">@color/navigation_bar_blue</item>
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
     </style>
 
+    <style name="WelcomeScreen" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/navigation_bar_blue</item>
+        <item name="colorPrimaryDark">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
 </resources>

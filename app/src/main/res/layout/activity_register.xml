@@ -7,7 +7,7 @@ android:background="@drawable/background"
 android:gravity="center"
 android:orientation="vertical"
 android:padding="10dp"
-    android:theme="@android:style/Theme.Holo.InputMethod">
+android:theme="@style/WelcomeScreen">
 
     <ImageView
         android:layout_width="200dp"

@@ -8,7 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.compass.ingenium.myapplication.modelclasses.Grove;
 import com.compass.ingenium.myapplication.modelclasses.Leaf;
@@ -59,6 +61,15 @@ public class GroveController extends ActionBarActivity{
         recyclerView.setLayoutManager(layoutManager);
         adapter = new GroveRecycler(grove.getTrees());
         recyclerView.setAdapter(adapter);
+
+        //Floating Action Button
+        findViewById(R.id.add_fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

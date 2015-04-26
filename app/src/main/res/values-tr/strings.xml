@@ -14,5 +14,6 @@
     <string name="name">Ad Soyad</string>
     <string name="title_activity_post">Gönderi</string>
     <string name="welcome">Hoşgeldiniz</string>
+    <string name="new_tree">Yeni Ağaç</string>
 
 </resources>
