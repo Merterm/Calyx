@@ -67,13 +67,13 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         recyclerView.setLayoutManager(layoutManager);
         adapter = new GroveRecycler(grove.getTrees());
         recyclerView.setAdapter(adapter);
-        recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(context, new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
-                        // do whatever
-                    }
-                })
-        );
+//        recyclerView.addOnItemTouchListener(
+//                new RecyclerItemClickListener(context, new RecyclerItemClickListener.OnItemClickListener() {
+//                    @Override public void onItemClick(View view, int position) {
+//                        // do whatever
+//                    }
+//                })
+//        );
 
         //Instantiating editText items in dialog
         inputTreeTitle = (EditText) findViewById(R.id.new_tree_title);
