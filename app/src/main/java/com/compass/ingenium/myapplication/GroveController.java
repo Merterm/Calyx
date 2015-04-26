@@ -22,6 +22,8 @@ import com.compass.ingenium.myapplication.modelclasses.User;
 
 public class GroveController extends ActionBarActivity implements NewTreeDialogFragment.TreeDialogListener{
 
+
+
     // Temporary properties
     User user = new User("Merterm", "12345", "mertincek@hotmail.com");
     Grove grove = new Grove();
@@ -132,4 +134,6 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
     public void onDialogNegativeClick(DialogFragment dialog) {
 
     }
+
+
 }

@@ -24,10 +24,16 @@
     <string name="title_activity_tree">Tree</string>
 
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="title_section1">Profile</string>
+    <string name="title_section2">Settings</string>
+    <string name="title_section3">Grove</string>
+    <string name="title_section4">Discover Grovelet</string>
+    <string name="title_section5">Leafs</string>
+    <string name="title_section6">Pigments</string>
+    <string name="title_section7">Help</string>
+    <string name="title_section8">About</string>
+    <string name="title_section9">Signout</string>
+    <string name="title_activity_drawer">Calyx</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
