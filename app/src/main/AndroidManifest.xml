@@ -55,6 +55,10 @@
             android:name=".DrawerActivity"
             android:label="@string/title_activity_drawer" >
         </activity>
+        <activity
+            android:name=".Help"
+            android:label="@string/title_activity_help" >
+        </activity>
     </application>
 
 </manifest>
