@@ -2,11 +2,10 @@ package com.compass.ingenium.myapplication;
 
 /**
  * By Ertuğrul Akay
- * Don't touch this.
+ *
  *
  */
 
-    //    package info.androidhive.loginandregistration.app;
 
 import android.app.Application;
 import android.text.TextUtils;
