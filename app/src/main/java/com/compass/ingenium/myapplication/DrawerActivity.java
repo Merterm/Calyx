@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
+import android.widget.TextView; 
 
 
 public class DrawerActivity extends ActionBarActivity
@@ -50,11 +50,47 @@ public class DrawerActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
+        Fragment objFragment = null;
+        switch(position)
+        {
+            /*
+            case 1:
+                objFragment = new GroveController();
+                break;
+            case 2:
+                objFragment = new GroveController();
+                break;
+            case 3:
+                objFragment = new GroveController();
+                break;
+            case 4:
+                objFragment = new GroveController();
+                break;
+            case 5:
+                objFragment = new GroveController();
+                break;
+            case 6:
+                objFragment = new GroveController();
+                break;
+            case 7:
+                objFragment = new GroveController();
+                break;
+            case 8:
+                objFragment = new GroveController();
+                break;
+            case 9:
+                objFragment = new GroveController();
+                break;
+                */
+
+        }
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
-    }
+        }
+
+
 
     public void onSectionAttached(int number) {
         switch (number) {
@@ -165,3 +201,4 @@ public class DrawerActivity extends ActionBarActivity
     }
 
 }
+
