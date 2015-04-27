@@ -66,8 +66,8 @@ public class NewTreeDialogFragment extends DialogFragment {
                 builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                       newTreeDescription = titleBox.getText().toString();
-                       newTreeTitle = descriptionBox.getText().toString();
+                       newTreeTitle = titleBox.getText().toString();
+                       newTreeDescription = descriptionBox.getText().toString();
                         // Send the positive button event back to the host activity
                         mListener.onDialogPositiveClick(NewTreeDialogFragment.this);
                     }

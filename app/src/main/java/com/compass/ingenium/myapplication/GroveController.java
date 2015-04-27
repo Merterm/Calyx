@@ -50,7 +50,6 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         //Grove Properties
         grove.addTree( tree);
         grove.addTree( tree2);
-        grove.addTree( new Tree(user, "blah", "blah"));
 
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -87,7 +86,7 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
                 DialogFragment dialog = new NewTreeDialogFragment();
                 dialog.show(getSupportFragmentManager(), "NewTreeDialogFragment");
 
-                Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -117,12 +116,21 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
 
     @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
-        if ( NewTreeDialogFragment.newTreeTitle != null && NewTreeDialogFragment.newTreeDescription != null) {
-            Toast.makeText(getApplicationContext(),
-                    NewTreeDialogFragment.newTreeTitle + " " + NewTreeDialogFragment.newTreeDescription, Toast.LENGTH_LONG)
+        if ( !NewTreeDialogFragment.newTreeTitle.equals("") && !NewTreeDialogFragment.newTreeDescription.equals("")) {
+            Toast.makeText(getApplicationContext(),NewTreeDialogFragment.newTreeTitle + " is added to Grove", Toast.LENGTH_LONG)
                     .show();
             Tree createdTree = new Tree(user, NewTreeDialogFragment.newTreeTitle, NewTreeDialogFragment.newTreeDescription);
+            //Adding random image to the tree
+            int randomImage = (int) (Math.random() * 2 + 1);
+            if (randomImage == 1)
+                createdTree.setTreeImage( getResources().getDrawable(R.drawable.tree1));
+            else if (randomImage == 2)
+                createdTree.setTreeImage(getResources().getDrawable(R.drawable.tree2));
+
+            //Adding the tree to the grove
             grove.addTree(createdTree);
+            NewTreeDialogFragment.newTreeTitle = null;
+            NewTreeDialogFragment.newTreeDescription= null;
         }
         else {
             Toast.makeText(getApplicationContext(),

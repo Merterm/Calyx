@@ -4,4 +4,5 @@
     <color name="register_background">#a7ade395</color>
     <color name="actionbar_blue">#00bcd4</color>
     <color name="navigation_bar_blue">#FF0098B0</color>
+    <color name="fab_pressed_yellow">#F6E5D000</color>
 </resources>

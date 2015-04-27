@@ -2,4 +2,5 @@
 <resources>
     <color name="actionbar_blue">#00bcd4</color>
     <color name="navigation_bar_blue">#FF00A8C0</color>
+    <color name="fab_pressed_yellow">#F6E5D000</color>
 </resources>
