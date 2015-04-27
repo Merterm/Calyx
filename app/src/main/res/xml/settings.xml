@@ -1,0 +1,19 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+    <preferencescreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <checkboxpreference
+            android:defaultvalue="false"
+            android:key="prefSendReport"
+            android:summary="Notifies the user of every Leaf's activity."
+            android:title="Tree Notifications">
+        </checkboxpreference>
+
+        <checkboxpreference
+            android:defaultvalue="true"
+            android:key="prefSendReport"
+            android:summary="Notifies the user of only registered Leaf's activity."
+            android:title="Leaf Notifications">
+        </checkboxpreference>
+
+
+</preferencescreen>
