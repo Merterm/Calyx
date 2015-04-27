@@ -1,7 +1,6 @@
 package com.compass.ingenium.myapplication.modelclasses;
 
 import android.media.Image;
-
 import java.util.ArrayList;
 
 /**
@@ -15,7 +14,8 @@ public class User {
     protected ArrayList<Post> myPosts;
     protected ArrayList<Pigment> myPigments;
 
-    public User( String username, String password, String eMail){
+
+     public User( String username, String password, String eMail){
         this.username = username;
         this.password = password;
         this.eMail = eMail;
@@ -29,6 +29,7 @@ public class User {
         this.eMail = eMail;
         this.profilePicture = profilePicture;
     }
+
 
     //methods
 
@@ -63,7 +64,7 @@ public class User {
         return myLeafs;
     }
 
-    public ArrayList<Post> getPosts()
+    public ArrayList<com.compass.ingenium.myapplication.modelclasses.Post> getPosts()
     {
         return myPosts;
     }
@@ -84,7 +85,7 @@ public class User {
         this.eMail = eMail;
     }
 
-    public void setProfilePictur( Image profilePicture)
+    public void setProfilePicture( Image profilePicture)
     {
         this.profilePicture = profilePicture;
     }
@@ -100,7 +101,7 @@ public class User {
         myLeafs.add( leaf);
     }
 
-    public void addPost( Post post)
+    public void addPost( com.compass.ingenium.myapplication.modelclasses.Post post)
     {
         myPosts.add( post);
     }

@@ -19,8 +19,8 @@ public class Post {
     public Post(){
         title= "Sample";
         description= "Castigat ridendo mores. Corvus oculum corvi non eruit.";
-        creator= new User("Sample User","1234", "sample@sample.com");
         content= null;
+        creator = new User("Merterm", "mertincek@hotmail.com", "12345");
     }
     public Post(String title, String description, User creator, Object Content) {
         this.title = title;

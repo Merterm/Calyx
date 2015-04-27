@@ -7,6 +7,7 @@ import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.EditText;
 
 import com.compass.ingenium.myapplication.modelclasses.Grove;
@@ -17,6 +18,8 @@ import com.compass.ingenium.myapplication.modelclasses.Tree;
  * Date: 26.4.2015.
  */
 public class NewTreeDialogFragment extends DialogFragment {
+
+    static String newTreeTitle, newTreeDescription;
 
     /* The activity that creates an instance of this dialog fragment must
      * implement this interface in order to receive event callbacks.
@@ -51,13 +54,20 @@ public class NewTreeDialogFragment extends DialogFragment {
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
+        View v = inflater.inflate(R.layout.new_tree_dialog, null);
+        builder.setView(v);
+
+        final EditText titleBox = (EditText)v.findViewById(R.id.new_tree_title);
+        final EditText descriptionBox = (EditText)v.findViewById(R.id.new_tree_description);
+
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(inflater.inflate(R.layout.new_tree_dialog, null))
                 // Add action buttons
-                .setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+                builder.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
+                       newTreeDescription = titleBox.getText().toString();
+                       newTreeTitle = descriptionBox.getText().toString();
                         // Send the positive button event back to the host activity
                         mListener.onDialogPositiveClick(NewTreeDialogFragment.this);
                     }

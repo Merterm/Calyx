@@ -1,7 +1,7 @@
 package com.compass.ingenium.myapplication;
 
+import android.content.Intent;
 import android.support.v4.app.DialogFragment;
-import android.app.ListActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,7 +24,7 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
 
 
     // Temporary properties
-    User user = new User("Merterm", "12345", "mertincek@hotmail.com");
+    static User user = new User("Merterm", "mertincek@hotmail.com", "12345");
     Grove grove = new Grove();
     Tree tree = new Tree( user, "Temporary Tree", "This tree has been created temporarily.");
     Tree tree2 = new Tree( user, "Mert's Tree");
@@ -34,10 +33,8 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    protected EditText inputTreeTitle;
-    protected EditText inputTreeDescription;
-    protected String newTreeTitle;
-    protected String newTreeDescription;
+    static EditText inputTreeTitle;
+    static EditText inputTreeDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +50,7 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         //Grove Properties
         grove.addTree( tree);
         grove.addTree( tree2);
+        grove.addTree( new Tree(user, "blah", "blah"));
 
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -119,8 +117,11 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
 
     @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
-        if ( newTreeTitle != null && newTreeDescription != null) {
-            Tree createdTree = new Tree(user, newTreeTitle, newTreeDescription);
+        if ( NewTreeDialogFragment.newTreeTitle != null && NewTreeDialogFragment.newTreeDescription != null) {
+            Toast.makeText(getApplicationContext(),
+                    NewTreeDialogFragment.newTreeTitle + " " + NewTreeDialogFragment.newTreeDescription, Toast.LENGTH_LONG)
+                    .show();
+            Tree createdTree = new Tree(user, NewTreeDialogFragment.newTreeTitle, NewTreeDialogFragment.newTreeDescription);
             grove.addTree(createdTree);
         }
         else {
