@@ -143,6 +143,7 @@ public class TreeController extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_tree, container, false);
+            //rootView.findViewById(R.id.pager).setBackground(GroveController.user.getGrove().getTree(0).getTreeImage());
             return rootView;
         }
     }

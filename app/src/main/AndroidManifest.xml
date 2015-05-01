@@ -60,10 +60,6 @@
             android:name=".Help"
             android:label="@string/title_activity_help" >
         </activity>
-        <activity
-            android:name=".activity_settings"
-            android:label="@string/title_activity_activity_settings" >
-        </activity>
     </application>
 
 </manifest>

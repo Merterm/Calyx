@@ -7,7 +7,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <android.support.v4.view.PagerTitleStrip
             android:id="@+id/pager_title_strip"
@@ -17,11 +17,46 @@
             android:background="#33b5e5"
             android:textColor="#fff"
             android:paddingTop="4dp"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="4dp"/>
 
     </android.support.v4.view.ViewPager>
 
-    <TextView android:id="@+id/section_label" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        card_view:cardCornerRadius="175dp"
+        card_view:cardPreventCornerOverlap = "true"
+        card_view:cardElevation="5dp">
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.getbase.floatingactionbutton.AddFloatingActionButton
+                xmlns:fab="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_colorNormal="@color/btn_logut_bg"
+                fab:fab_size="normal"
+                android:elevation="10dp"
+                android:layout_below="@+id/view"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:src="@drawable/tree2"
+                android:background="@drawable/shape"
+                android:id="@+id/view" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>
