@@ -52,7 +52,7 @@
             <ImageView
                 android:layout_width="350dp"
                 android:layout_height="150dp"
-                android:src="@drawable/tree2"
+                android:src="@drawable/ingenium"
                 android:background="@drawable/shape"
                 android:id="@+id/view" />
         </RelativeLayout>

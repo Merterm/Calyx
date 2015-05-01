@@ -64,7 +64,7 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         //recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new GroveRecycler(grove.getTrees());
+        adapter = new GroveRecycler(GroveController.this, grove.getTrees());
         recyclerView.setAdapter(adapter);
 //        recyclerView.addOnItemTouchListener(
 //                new RecyclerItemClickListener(context, new RecyclerItemClickListener.OnItemClickListener() {
