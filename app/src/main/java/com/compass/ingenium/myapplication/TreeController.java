@@ -1,5 +1,6 @@
 package com.compass.ingenium.myapplication;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 import android.support.v7.app.ActionBarActivity;
@@ -17,6 +18,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.compass.ingenium.myapplication.modelclasses.Tree;
 
 
 public class TreeController extends ActionBarActivity {
@@ -36,6 +39,8 @@ public class TreeController extends ActionBarActivity {
      */
     ViewPager mViewPager;
 
+    Tree tree;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +54,9 @@ public class TreeController extends ActionBarActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        //Getting the extras from the intent
+        tree = (Tree) getIntent().getSerializableExtra("tree");
 
     }
 
@@ -96,21 +104,12 @@ public class TreeController extends ActionBarActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return tree.getTreeSize();
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
-                case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
-            }
-            return null;
+            return "Leaf " + (position + 1);
         }
     }
 

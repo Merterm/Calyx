@@ -1,5 +1,7 @@
 package com.compass.ingenium.myapplication.modelclasses;
 
+import java.io.Serializable;
+
 /**
  * Description: The Post Class. It contains the information when a user creates or shows a post.
  * Leaf extends this class.
@@ -7,7 +9,7 @@ package com.compass.ingenium.myapplication.modelclasses;
  * Version: 1.0
  * By Ertugrul Akay (Kaxell)
  */
-public class Post {
+public class Post implements Serializable {
 
     //Properties
     String title;

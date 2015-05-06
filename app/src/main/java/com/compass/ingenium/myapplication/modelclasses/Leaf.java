@@ -2,8 +2,9 @@ package com.compass.ingenium.myapplication.modelclasses;
 //drawer
 //profile, settings, grove, options, leaf, 
 
+import java.io.Serializable;
 import java.util.ArrayList;
-public class Leaf
+public class Leaf implements Serializable
 {
   //variables
   String name;

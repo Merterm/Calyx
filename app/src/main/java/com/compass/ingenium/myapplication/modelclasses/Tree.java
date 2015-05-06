@@ -2,6 +2,7 @@ package com.compass.ingenium.myapplication.modelclasses;
 
 import android.graphics.drawable.Drawable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  * name: Tree
@@ -10,7 +11,7 @@ import java.util.ArrayList;
  * version 1.0
  * date: 22/04/2015
  */ 
-public class Tree
+public class Tree implements Serializable
 {
     // constants
     protected final User CREATOR;
@@ -19,14 +20,13 @@ public class Tree
     protected String description, title;
     protected ArrayList<Leaf> leafs;
     protected ArrayList<User> members;
-    protected Drawable treeImage;
+    protected int treeImageID, treeSize;
 
     // constructors
     public Tree (User creator){
         CREATOR = creator;
         leafs = new ArrayList<>();
         members = new ArrayList<>();
-        treeImage = null;
     }
 
     public Tree (User creator, String title){
@@ -34,7 +34,6 @@ public class Tree
         this.title = title;
         leafs = new ArrayList<>();
         members = new ArrayList<>();
-        treeImage = null;
     }
 
     public Tree (User creator, String title, String description) {
@@ -43,7 +42,6 @@ public class Tree
         this.description = description;
         leafs = new ArrayList<>();
         members = new ArrayList<>();
-        treeImage = null;
     }
 
     // methods
@@ -73,8 +71,12 @@ public class Tree
       return members;
     }
 
-    public Drawable getTreeImage() {
-        return treeImage;
+    public int getTreeImageID() {
+        return treeImageID;
+    }
+
+    public int getTreeSize() {
+        return treeSize;
     }
 
     //set methods
@@ -83,8 +85,8 @@ public class Tree
       this.description = description;
     }
 
-    public void setTreeImage( Drawable treeImage) {
-        this.treeImage = treeImage;
+    public void setTreeImageID( int treeImageID) {
+        this.treeImageID = treeImageID;
     }
 
     public void setTitle(String title) {
@@ -99,7 +101,8 @@ public class Tree
 
     public void addLeaf (Leaf leaf)
     {
-      leafs.add(leaf);
+        leafs.add(leaf);
+        treeSize++;
     }
 
     //remove methods

@@ -2,6 +2,7 @@ package com.compass.ingenium.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
@@ -41,7 +42,7 @@ public class GroveRecycler extends RecyclerView.Adapter<GroveRecycler.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(final GroveRecycler.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(final GroveRecycler.ViewHolder viewHolder, final int i) {
         //Setting text for title, creator, description, leaf no of the Tree in the grove list
         viewHolder.titleView.setText( groveData.get(i).getTitle());
         viewHolder.creatorView.setText( groveData.get(i).getCreator().getUsername());
@@ -49,22 +50,23 @@ public class GroveRecycler extends RecyclerView.Adapter<GroveRecycler.ViewHolder
         if (groveData.get(i).getLeafs().size() > 1 ) {
             viewHolder.leafNoView.setText(groveData.get(i).getLeafs().size() + " Leaves");
         }
-        else
-        {
+        else {
             viewHolder.leafNoView.setText(groveData.get(i).getLeafs().size() + " Leaf");
         }
+
         //Setting the background image of card to the image of the tree
-        viewHolder.imageView.setBackground(groveData.get(i).getTreeImage());
+        viewHolder.imageView.setBackground(context.getResources().getDrawable(groveData.get(i).getTreeImageID()));
 
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 viewHolder.cardView.setCardElevation(30);
                 viewHolder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.card_pressed));
+                //getting the card
                 //intent example
                 Intent intent = new Intent(context, TreeController.class);
-                /*intent.putExtra("id", newsBean.getId());
-                intent.putExtra("category", newsBean.getCategory());*/
+                intent.putExtra("tree", groveData.get(i));
+                intent.putExtra("tree_position", i);
                 context.startActivity(intent);
                 viewHolder.cardView.setCardElevation(10);
                 viewHolder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.white));

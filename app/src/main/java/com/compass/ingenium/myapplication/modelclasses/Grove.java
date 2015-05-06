@@ -1,8 +1,9 @@
 package com.compass.ingenium.myapplication.modelclasses;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Grove{
+public class Grove implements Serializable{
     
     //properties
     protected ArrayList<Tree> trees;

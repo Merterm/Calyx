@@ -44,8 +44,8 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         //Tree properties
         tree.addLeaf( new Leaf(user));
         tree2.addLeaf( new Leaf(user));
-        tree.setTreeImage(getResources().getDrawable(R.drawable.tree1));
-        tree2.setTreeImage( getResources().getDrawable(R.drawable.tree2));
+        tree.setTreeImageID(R.drawable.tree1);
+        tree2.setTreeImageID(R.drawable.tree2);
 
         //Grove Properties
         grove.addTree( tree);
@@ -123,9 +123,9 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
             //Adding random image to the tree
             int randomImage = (int) (Math.random() * 2 + 1);
             if (randomImage == 1)
-                createdTree.setTreeImage( getResources().getDrawable(R.drawable.tree1));
+                createdTree.setTreeImageID( R.drawable.tree1);
             else if (randomImage == 2)
-                createdTree.setTreeImage(getResources().getDrawable(R.drawable.tree2));
+                createdTree.setTreeImageID(R.drawable.tree2);
 
             //Adding the tree to the grove
             grove.addTree(createdTree);

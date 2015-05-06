@@ -1,5 +1,6 @@
 package com.compass.ingenium.myapplication.modelclasses;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.*;
 
@@ -10,7 +11,7 @@ import java.util.*;
  * version 1.0
  * date: 22/04/2015
  */
-public class Event
+public class Event implements Serializable
 {
   
   // properties

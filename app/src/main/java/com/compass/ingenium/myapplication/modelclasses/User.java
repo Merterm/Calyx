@@ -1,12 +1,14 @@
 package com.compass.ingenium.myapplication.modelclasses;
 
 import android.media.Image;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Batuhan Erarslan & Mert Inan on 19.4.2015.
  */
-public class User {
+public class User implements Serializable{
     protected String username, password, eMail;
     protected Image profilePicture;
     protected Grove grove;

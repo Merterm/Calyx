@@ -40,4 +40,5 @@
 
     <string name="action_example">Example action</string>
     <string name="title_activity_help">Help</string>
+    <string name="title_activity_leaf_controller">LeafController</string>
 </resources>
