@@ -10,8 +10,7 @@
     android:id="@+id/leaf_in_tree_card"
     card_view:cardCornerRadius="175dp"
     card_view:cardPreventCornerOverlap = "true"
-    card_view:cardElevation="5dp"
-    android:background="@drawable/tree2">
+    card_view:cardElevation="5dp">
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,9 +31,37 @@
         <ImageView
             android:layout_width="350dp"
             android:layout_height="150dp"
-            android:src="@drawable/tree2"
+            android:src="@drawable/ingenium"
             android:background="@drawable/shape"
             android:id="@+id/view" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leaf_title"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:textSize="@dimen/abc_text_size_title_material"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:layout_marginLeft="14dp"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leaf_description"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:textSize="@dimen/abc_text_size_body_2_material"
+            android:fontFamily="sans-serif-light"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leaf_creator"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:textSize="@dimen/abc_text_size_body_1_material"
+            android:fontFamily="sans-serif-regular"
+            android:layout_marginTop="14dp" />
         </RelativeLayout>
 
 </android.support.v7.widget.CardView>

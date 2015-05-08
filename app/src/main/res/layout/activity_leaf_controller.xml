@@ -43,6 +43,7 @@
             <ImageView
                 android:layout_width="350dp"
                 android:layout_height="200dp"
+                android:background="@drawable/ingenium"
                 android:id="@+id/image_item"/>
 
             <TextView
