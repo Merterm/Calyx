@@ -15,7 +15,7 @@ public class SessionManager {
 
     // Shared Preferences
     SharedPreferences pref;
-
+//asd
     Editor editor;
     Context _context;
 
