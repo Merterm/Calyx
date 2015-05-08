@@ -7,6 +7,7 @@
     android:layout_height="350dp"
     android:layout_marginBottom="10dp"
     android:layout_marginLeft="5dp"
+    android:id="@+id/leaf_in_tree_card"
     card_view:cardCornerRadius="175dp"
     card_view:cardPreventCornerOverlap = "true"
     card_view:cardElevation="5dp"

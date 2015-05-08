@@ -3,6 +3,7 @@ package com.compass.ingenium.myapplication;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.CardView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.compass.ingenium.myapplication.modelclasses.Leaf;
 import com.compass.ingenium.myapplication.modelclasses.Tree;
 
 
@@ -98,7 +101,7 @@ public class TreeController extends ActionBarActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            return LeafFragment.newInstance(position + 1, tree.getLeafs(), tree);
         }
 
         @Override
@@ -116,33 +119,56 @@ public class TreeController extends ActionBarActivity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class LeafFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
+        private static ArrayList<Leaf> leafs;
+        private static Tree tree;
+        private static int sectionNumber;
 
         /**
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
+        public static LeafFragment newInstance(int sectionNumber, ArrayList<Leaf> leafs, Tree tree) {
+            LeafFragment.sectionNumber = sectionNumber;
+            LeafFragment.leafs = leafs;
+            LeafFragment.tree = tree;
+            LeafFragment fragment = new LeafFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public PlaceholderFragment() {
-        }
+        public LeafFragment() {}
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_tree, container, false);
-            //rootView.findViewById(R.id.pager).setBackground(GroveController.user.getGrove().getTree(0).getTreeImage());
+
+            //Setting the background of the tree to the tree image
+            if(tree.getTreeImageID() == R.drawable.tree1)
+                rootView.findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree1));
+            else if(tree.getTreeImageID() == R.drawable.tree2)
+                rootView.findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree2));
+
+            //Changing the properties of the card according to the leaf
+
+
+            CardView cardView = (CardView) rootView.findViewById(R.id.leaf_in_tree_card);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), LeafController.class);
+                    intent.putExtra("leaf", leafs.get(sectionNumber));
+                    startActivity(intent);
+                }
+            });
             return rootView;
         }
     }

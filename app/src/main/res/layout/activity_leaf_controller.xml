@@ -13,11 +13,32 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="5dp"
         card_view:cardCornerRadius="1dp"
-        card_view:cardElevation="10dp">
+        card_view:cardElevation="5dp">
 
         <RelativeLayout
             android:layout_width="350dp"
-            android:layout_height="300dp">
+            android:layout_height="370dp">
+
+            <com.getbase.floatingactionbutton.FloatingActionsMenu
+                xmlns:fab="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                fab:fab_addButtonColorNormal="@color/actionbar_blue"
+                fab:fab_addButtonColorPressed="@color/navigation_bar_blue"
+                fab:fab_addButtonPlusIconColor="@color/white"
+                android:layout_alignBottom="@+id/creator_item"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    fab:fab_colorNormal="@color/white"
+                    fab:fab_title="Label on the right"/>
+
+            </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
             <ImageView
                 android:layout_width="350dp"

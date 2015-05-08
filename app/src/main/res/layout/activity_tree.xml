@@ -8,7 +8,10 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:background="@drawable/tree1"
+        android:backgroundTint="@color/navigation_bar_blue"
+        android:backgroundTintMode="screen" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         xmlns:fab="http://schemas.android.com/apk/res-auto"
@@ -21,11 +24,11 @@
         fab:fab_addButtonColorPressed="@color/fab_pressed_yellow"
         fab:fab_addButtonPlusIconColor="@color/bg_login">
 
-    <com.getbase.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        fab:fab_colorNormal="@color/white"
-        fab:fab_title="Label on the right"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_title="Label on the right"/>
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>

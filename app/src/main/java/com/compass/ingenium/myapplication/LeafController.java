@@ -5,13 +5,19 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.compass.ingenium.myapplication.modelclasses.Leaf;
+
 
 public class LeafController extends ActionBarActivity {
+
+    Leaf leaf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaf_controller);
+
+        //Creating a temporary leaf and adding its properties to the
     }
 
     @Override
