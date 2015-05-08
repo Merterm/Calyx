@@ -1,12 +1,80 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     tools:context="com.compass.ingenium.myapplication.LeafController">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/leaf_main_card"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="370dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        card_view:cardCornerRadius="1dp"
+        card_view:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="300dp">
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:id="@+id/image_item"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title_item"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:textSize="@dimen/abc_text_size_title_material"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/white"
+                android:layout_marginLeft="14dp"
+                android:layout_alignBottom="@+id/image_item"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/creator_item"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:textSize="@dimen/abc_text_size_body_1_material"
+                android:fontFamily="sans-serif-regular"
+                android:layout_marginTop="14dp"
+                android:layout_below="@+id/image_item"
+                android:layout_alignLeft="@+id/title_item"
+                android:layout_alignStart="@+id/title_item" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/description_item"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:textSize="@dimen/abc_text_size_body_2_material"
+                android:fontFamily="sans-serif-light"
+                android:layout_below="@+id/creator_item"
+                android:layout_alignLeft="@+id/creator_item"
+                android:layout_alignStart="@+id/creator_item" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/leaf_number_item"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:textSize="@dimen/abc_text_size_body_2_material"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold"
+                android:layout_below="@+id/description_item"
+                android:layout_alignLeft="@+id/description_item"
+                android:layout_alignStart="@+id/description_item" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>
