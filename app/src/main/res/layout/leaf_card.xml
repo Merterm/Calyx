@@ -26,7 +26,7 @@
             fab:fab_size="normal"
             android:elevation="10dp"
             android:id="@+id/member_add"
-            android:layout_below="@+id/view"
+            android:layout_below="@+id/leaf_image"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -36,7 +36,7 @@
             android:transitionName="leaf_image"
             android:src="@drawable/ingenium"
             android:background="@drawable/shape"
-            android:id="@+id/view" />
+            android:id="@+id/leaf_image" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/leaf_creator"
+            android:id="@+id/members"
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:textSize="@dimen/abc_text_size_body_1_material"
             android:fontFamily="sans-serif-regular"

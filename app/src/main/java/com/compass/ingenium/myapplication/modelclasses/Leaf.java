@@ -7,12 +7,12 @@ import java.util.ArrayList;
 public class Leaf implements Serializable
 {
   //variables
-  String name;
-  String description;
+  String name, description;
   User creator;
-  ArrayList<Post> posts = new ArrayList<Post>();
-  ArrayList<User> members = new ArrayList<User>();
+  ArrayList<Post> posts;
+  ArrayList<User> members;
   Pigment pigment;
+    int leafImageId;
   
   //constructor
   public Leaf(User creator)
@@ -20,6 +20,8 @@ public class Leaf implements Serializable
     name = "";
     description = "";
     this.creator = creator;
+      members = new ArrayList<User>();
+      posts = new ArrayList<Post>();
   }
   
   //methods
@@ -99,7 +101,7 @@ public class Leaf implements Serializable
   public User removeMember(User member) {
       boolean exitLoop = true;
       User tempUser = null;
-      for (int i = 0; i < posts.size() && exitLoop == false; i++) {
+      for (int i = 0; i < posts.size() && !exitLoop; i++) {
           if (members.get(i).equals(member)) {
               tempUser = members.remove(i);
               exitLoop = false;
@@ -107,6 +109,13 @@ public class Leaf implements Serializable
       }
       return tempUser;
   }
-  
 
+    //Image methods
+    public int getLeafImageId() {
+        return leafImageId;
+    }
+
+    public void setLeafImageId(int leafImageId) {
+        this.leafImageId = leafImageId;
+    }
 }

@@ -3,7 +3,10 @@ package com.compass.ingenium.myapplication;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import android.annotation.TargetApi;
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -160,21 +163,28 @@ public class TreeController extends ActionBarActivity {
 
             //Getting the properties of the card
             TextView titleView =  (TextView) rootView.findViewById(R.id.leaf_title);
-            TextView creatorView = (TextView) rootView.findViewById(R.id.creator_item);
-            TextView descriptionView = (TextView) rootView.findViewById(R.id.description_item);
-            ImageView imageView = (ImageView) rootView.findViewById(R.id.image_item);
+            TextView membersView = (TextView) rootView.findViewById(R.id.members);
+            TextView descriptionView = (TextView) rootView.findViewById(R.id.leaf_description);
+            final ImageView imageView = (ImageView) rootView.findViewById(R.id.leaf_image);
             CardView cardView = (CardView) rootView.findViewById(R.id.leaf_in_tree_card);
 
             //Changing the properties according to leaf
             titleView.setText(leafs.get(sectionNumber).getName());
+            descriptionView.setText(leafs.get(sectionNumber).getDescription());
+            membersView.setText(leafs.get(sectionNumber).getMembers().size() + " Members");
+            imageView.setBackground(getActivity().getResources().getDrawable(R.drawable.ingenium));
 
-
-
+            //Adding an onclicklistener to the card
             cardView.setOnClickListener(new View.OnClickListener() {
+                @TargetApi(Build.VERSION_CODES.LOLLIPOP)
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(getActivity(), LeafController.class);
                     intent.putExtra("leaf", leafs.get(sectionNumber));
+                    // create the transition animation - the images in the layouts
+                    // of both activities are defined with android:transitionName="robot"
+                    ActivityOptions options = ActivityOptions
+                            .makeSceneTransitionAnimation(getActivity(), imageView, "leaf_image");
                     startActivity(intent);
                 }
             });
