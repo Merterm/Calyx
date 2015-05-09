@@ -3,20 +3,27 @@
     android:layout_height="match_parent"
     tools:context="com.compass.ingenium.myapplication.LeafController">
 
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_toolbar"
+        android:elevation="10dp"/>
+
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/leaf_main_card"
         android:layout_gravity="center"
-        android:layout_width="350dp"
+        android:layout_width="360dp"
         android:layout_height="370dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="5dp"
         card_view:cardCornerRadius="1dp"
         card_view:cardElevation="5dp">
 
         <RelativeLayout
-            android:layout_width="350dp"
+            android:layout_width="360dp"
             android:layout_height="370dp">
 
             <com.getbase.floatingactionbutton.FloatingActionsMenu
@@ -24,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elevation="10dp"
+                fab:fab_expandDirection="left"
                 fab:fab_addButtonColorNormal="@color/actionbar_blue"
                 fab:fab_addButtonColorPressed="@color/navigation_bar_blue"
                 fab:fab_addButtonPlusIconColor="@color/white"
@@ -35,15 +43,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
-                    fab:fab_colorNormal="@color/white"
-                    fab:fab_title="Label on the right"/>
+                    fab:fab_colorNormal="@color/login_yellow"
+                    fab:fab_plusIconColor="@color/bg_login"
+                    fab:fab_colorPressed="@color/fab_pressed_yellow"
+                    fab:fab_title="Change the Leaf Image"/>
+
+                <com.getbase.floatingactionbutton.AddFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    fab:fab_colorNormal="@color/login_yellow"
+                    fab:fab_plusIconColor="@color/bg_login"
+                    fab:fab_colorPressed="@color/fab_pressed_yellow"
+                    fab:fab_title="Add a Post"/>
 
             </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
             <ImageView
-                android:layout_width="350dp"
+                android:layout_width="360dp"
                 android:layout_height="200dp"
                 android:background="@drawable/ingenium"
+                android:transitionName="leaf_image"
                 android:id="@+id/image_item"/>
 
             <TextView

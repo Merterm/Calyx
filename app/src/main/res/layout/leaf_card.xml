@@ -6,11 +6,12 @@
     android:layout_width="350dp"
     android:layout_height="350dp"
     android:layout_marginBottom="10dp"
-    android:layout_marginLeft="5dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     android:id="@+id/leaf_in_tree_card"
     card_view:cardCornerRadius="175dp"
     card_view:cardPreventCornerOverlap = "true"
-    card_view:cardElevation="5dp">
+    card_view:cardElevation="20dp">
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,6 +25,7 @@
             fab:fab_colorNormal="@color/btn_logut_bg"
             fab:fab_size="normal"
             android:elevation="10dp"
+            android:id="@+id/member_add"
             android:layout_below="@+id/view"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -31,6 +33,7 @@
         <ImageView
             android:layout_width="350dp"
             android:layout_height="150dp"
+            android:transitionName="leaf_image"
             android:src="@drawable/ingenium"
             android:background="@drawable/shape"
             android:id="@+id/view" />

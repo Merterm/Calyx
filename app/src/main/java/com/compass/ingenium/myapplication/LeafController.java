@@ -2,6 +2,7 @@ package com.compass.ingenium.myapplication;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -17,7 +18,18 @@ public class LeafController extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaf_controller);
 
-        //Creating a temporary leaf and adding its properties to the
+        //Getting the leaf from the previous activity
+        leaf = (Leaf) getIntent().getSerializableExtra("leaf");
+
+        //Toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(leaf.getName());
+        toolbar.setTitleTextColor(getResources().getColor(R.color.login_yellow));
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
+
+        //Leaf properties
     }
 
     @Override

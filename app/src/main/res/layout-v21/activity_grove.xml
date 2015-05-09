@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         fab:fab_colorNormal="@color/login_yellow"
         fab:fab_colorPressed="@color/fab_pressed_yellow"
-        fab:fab_plusIconColor="@color/lbl_name"
+        fab:fab_plusIconColor="@color/bg_login"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="16dp"

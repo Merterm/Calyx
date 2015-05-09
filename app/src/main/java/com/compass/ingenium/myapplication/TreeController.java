@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.compass.ingenium.myapplication.modelclasses.Leaf;
@@ -157,10 +158,18 @@ public class TreeController extends ActionBarActivity {
             else if(tree.getTreeImageID() == R.drawable.tree2)
                 rootView.findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree2));
 
-            //Changing the properties of the card according to the leaf
-
-
+            //Getting the properties of the card
+            TextView titleView =  (TextView) rootView.findViewById(R.id.leaf_title);
+            TextView creatorView = (TextView) rootView.findViewById(R.id.creator_item);
+            TextView descriptionView = (TextView) rootView.findViewById(R.id.description_item);
+            ImageView imageView = (ImageView) rootView.findViewById(R.id.image_item);
             CardView cardView = (CardView) rootView.findViewById(R.id.leaf_in_tree_card);
+
+            //Changing the properties according to leaf
+            titleView.setText(leafs.get(sectionNumber).getName());
+
+
+
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
