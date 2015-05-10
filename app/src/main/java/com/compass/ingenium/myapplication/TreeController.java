@@ -1,23 +1,20 @@
 package com.compass.ingenium.myapplication;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 import android.annotation.TargetApi;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,12 +22,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.compass.ingenium.myapplication.modelclasses.Leaf;
 import com.compass.ingenium.myapplication.modelclasses.Tree;
 
 
-public class TreeController extends ActionBarActivity {
+public class TreeController extends ActionBarActivity implements NewLeafDialogFragment.LeafDialogListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -66,6 +63,18 @@ public class TreeController extends ActionBarActivity {
         //Getting the extras from the intent
         tree = (Tree) getIntent().getSerializableExtra("tree");
 
+        //Floating Action Button
+        findViewById(R.id.add_fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an instance of the dialog fragment and show it
+                DialogFragment dialog = new NewTreeDialogFragment();
+                dialog.show(getSupportFragmentManager(), "NewTreeDialogFragment");
+
+                //Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
 
@@ -89,6 +98,35 @@ public class TreeController extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        if ( !NewLeafDialogFragment.newLeafTitle.equals("") && !NewLeafDialogFragment.newLeafDescription.equals("")) {
+            Toast.makeText(getApplicationContext(), NewLeafDialogFragment.newLeafTitle + " is added to Tree", Toast.LENGTH_LONG)
+                    .show();
+
+            //Instantiating the leaf
+            Leaf createdLeaf = new Leaf(GroveController.user);
+            createdLeaf.setName(NewLeafDialogFragment.newLeafTitle);
+            createdLeaf.setDescription(NewLeafDialogFragment.newLeafDescription);
+            createdLeaf.setLeafImageId(R.drawable.ingenium);
+
+            //Adding the leaf to the tree
+            tree.addLeaf(createdLeaf);
+            NewLeafDialogFragment.newLeafTitle = null;
+            NewLeafDialogFragment.newLeafDescription= null;
+        }
+        else {
+            Toast.makeText(getApplicationContext(),
+                    "Please enter the title and description!", Toast.LENGTH_LONG)
+                    .show();
+        }
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+
     }
 
 
@@ -186,7 +224,7 @@ public class TreeController extends ActionBarActivity {
                     // of both activities are defined with android:transitionName="robot"
                     ActivityOptions options = ActivityOptions
                             .makeSceneTransitionAnimation(getActivity(), imageView, "leaf_image");
-                    startActivity(intent);
+                    startActivity(intent /*options.toBundle()*/);
                 }
             });
             return rootView;

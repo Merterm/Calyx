@@ -17,6 +17,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="new_tree">New Tree</string>
+    <string name="new_leaf">New Leaf</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="create">Create</string>
