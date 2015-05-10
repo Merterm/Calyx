@@ -34,16 +34,40 @@
             android:paddingBottom="4dp" />
     </android.support.v4.view.ViewPager>
 
-    <com.getbase.floatingactionbutton.AddFloatingActionButton
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
         xmlns:fab="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/tree_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        fab:fab_colorNormal="@color/login_yellow"
-        fab:fab_colorPressed="@color/fab_pressed_yellow"
-        fab:fab_plusIconColor="@color/bg_login"/>
+        android:elevation="10dp"
+        fab:fab_expandDirection="left"
+        fab:fab_addButtonColorNormal="@color/login_yellow"
+        fab:fab_addButtonColorPressed="@color/fab_pressed_yellow"
+        fab:fab_addButtonPlusIconColor="@color/bg_login">
 
+        <com.getbase.floatingactionbutton.AddFloatingActionButton
+            xmlns:fab="http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leaf_add_fab"
+            android:elevation="10dp"
+            fab:fab_title="New Leaf"
+            fab:fab_colorNormal="@color/login_yellow"
+            fab:fab_colorPressed="@color/fab_pressed_yellow"
+            fab:fab_plusIconColor="@color/bg_login"/>
+
+        <com.getbase.floatingactionbutton.AddFloatingActionButton
+            xmlns:fab="http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tree_image_fab"
+            android:elevation="10dp"
+            fab:fab_title="Change the Tree Image"
+            fab:fab_colorNormal="@color/login_yellow"
+            fab:fab_colorPressed="@color/fab_pressed_yellow"
+            fab:fab_plusIconColor="@color/bg_login"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>

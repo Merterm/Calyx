@@ -39,10 +39,11 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true">
 
-                <com.getbase.floatingactionbutton.FloatingActionButton
+                <com.getbase.floatingactionbutton.AddFloatingActionButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
+                    android:id="@+id/leaf_image_fab"
                     fab:fab_colorNormal="@color/login_yellow"
                     fab:fab_plusIconColor="@color/bg_login"
                     fab:fab_colorPressed="@color/fab_pressed_yellow"
@@ -52,6 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
+                    android:id="@+id/add_post_fab"
                     fab:fab_colorNormal="@color/login_yellow"
                     fab:fab_plusIconColor="@color/bg_login"
                     fab:fab_colorPressed="@color/fab_pressed_yellow"
@@ -118,5 +120,12 @@
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/post_recycler_view"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/leaf_main_card" />
 
 </RelativeLayout>

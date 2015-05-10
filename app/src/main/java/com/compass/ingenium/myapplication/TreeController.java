@@ -64,12 +64,12 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         tree = (Tree) getIntent().getSerializableExtra("tree");
 
         //Floating Action Button
-        findViewById(R.id.add_fab).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.leaf_add_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Create an instance of the dialog fragment and show it
-                DialogFragment dialog = new NewTreeDialogFragment();
-                dialog.show(getSupportFragmentManager(), "NewTreeDialogFragment");
+                DialogFragment dialog = new NewLeafDialogFragment();
+                dialog.show(getSupportFragmentManager(), "NewLeafDialogFragment");
 
                 //Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
             }

@@ -40,7 +40,7 @@
             android:label="@string/app_name"
             android:launchMode="singleTop" />
         <activity
-            android:name=".Post"
+            android:name=".PostController"
             android:label="@string/title_activity_post" >
         </activity>
         <activity

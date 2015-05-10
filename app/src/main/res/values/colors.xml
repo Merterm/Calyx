@@ -7,4 +7,5 @@
     <color name="fab_pressed_yellow">#F6E5D000</color>
     <color name="card_pressed">#ffd0d0d0</color>
     <color name="transparent_toolbar">#00FFFFFF</color>
+    <color name="orange">#FFFF731B</color>
 </resources>
