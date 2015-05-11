@@ -26,6 +26,7 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
     // Temporary properties
     static User user = new User("Merterm", "mertincek@hotmail.com", "12345");
     Grove grove = new Grove();
+    Leaf emptyLeaf = new Leaf(user);
     Tree tree = new Tree( user, "Temporary Tree", "This tree has been created temporarily.");
     Tree tree2 = new Tree( user, "Mert's Tree");
 
@@ -42,8 +43,8 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         setContentView(R.layout.activity_grove);
 
         //Tree properties
-        tree.addLeaf( new Leaf(user));
-        tree2.addLeaf( new Leaf(user));
+        tree.addLeaf( emptyLeaf);
+        tree2.addLeaf(emptyLeaf);
         tree.setTreeImageID(R.drawable.tree1);
         tree2.setTreeImageID(R.drawable.tree2);
 

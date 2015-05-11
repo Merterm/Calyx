@@ -45,12 +45,15 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
     ViewPager mViewPager;
 
     Tree tree;
+    ArrayList leafs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tree);
 
+        tree = (Tree) getIntent().getSerializableExtra("tree");
+        leafs = tree.getLeafs();
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -59,9 +62,6 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        //Getting the extras from the intent
-        tree = (Tree) getIntent().getSerializableExtra("tree");
 
         //Floating Action Button
         findViewById(R.id.leaf_add_fab).setOnClickListener(new View.OnClickListener() {
@@ -144,7 +144,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return LeafFragment.newInstance(position + 1, tree.getLeafs(), tree);
+            return LeafFragment.newInstance(position + 1,leafs, tree);
         }
 
         @Override
@@ -171,6 +171,13 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         private static ArrayList<Leaf> leafs;
         private static Tree tree;
         private static int sectionNumber;
+        private
+        //Getting the properties of the card
+        TextView titleView =  (TextView) getActivity().findViewById(R.id.leaf_title);
+        TextView membersView = (TextView) getActivity().findViewById(R.id.members);
+        TextView descriptionView = (TextView) getActivity().findViewById(R.id.leaf_description);
+        final ImageView imageView = (ImageView) getActivity().findViewById(R.id.leaf_image);
+        CardView cardView = (CardView) getActivity().findViewById(R.id.leaf_in_tree_card);
 
         /**
          * Returns a new instance of this fragment for the given section
@@ -196,22 +203,16 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
 
             //Setting the background of the tree to the tree image
             if(tree.getTreeImageID() == R.drawable.tree1)
-                rootView.findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree1));
+                getActivity().findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree1));
             else if(tree.getTreeImageID() == R.drawable.tree2)
-                rootView.findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree2));
-
-            //Getting the properties of the card
-            TextView titleView =  (TextView) rootView.findViewById(R.id.leaf_title);
-            TextView membersView = (TextView) rootView.findViewById(R.id.members);
-            TextView descriptionView = (TextView) rootView.findViewById(R.id.leaf_description);
-            final ImageView imageView = (ImageView) rootView.findViewById(R.id.leaf_image);
-            CardView cardView = (CardView) rootView.findViewById(R.id.leaf_in_tree_card);
+                getActivity().findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree2));
 
             //Changing the properties according to leaf
-            titleView.setText(leafs.get(sectionNumber).getName());
-            descriptionView.setText(leafs.get(sectionNumber).getDescription());
-            membersView.setText(leafs.get(sectionNumber).getMembers().size() + " Members");
-            imageView.setBackground(getActivity().getResources().getDrawable(R.drawable.ingenium));
+            /*Toast.makeText(getActivity().getApplicationContext(), leafs.get(sectionNumber-1).getName(), Toast.LENGTH_LONG).show();
+            titleView.setText(leafs.get(sectionNumber-1).getName());
+            descriptionView.setText(leafs.get(sectionNumber-1).getDescription());
+            membersView.setText(leafs.get(sectionNumber-1).getMembers().size() + " Members");
+            imageView.setBackground(getActivity().getResources().getDrawable(R.drawable.ingenium));*/
 
             //Adding an onclicklistener to the card
             cardView.setOnClickListener(new View.OnClickListener() {
@@ -219,7 +220,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(getActivity(), LeafController.class);
-                    intent.putExtra("leaf", leafs.get(sectionNumber));
+                    intent.putExtra("leaf", leafs.get(sectionNumber-1));
                     // create the transition animation - the images in the layouts
                     // of both activities are defined with android:transitionName="robot"
                     ActivityOptions options = ActivityOptions

@@ -55,7 +55,7 @@ package com.compass.ingenium.myapplication;
             // Check if user is already logged in or not
             if (session.isLoggedIn()) {
                 // User is already logged in. Take him to main activity
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, GroveController.class);
                 startActivity(intent);
                 finish();
             }
@@ -124,7 +124,7 @@ package com.compass.ingenium.myapplication;
 
                             // Launch main activity
                             Intent intent = new Intent(LoginActivity.this,
-                                    MainActivity.class);
+                                    GroveController.class);
                             startActivity(intent);
                             finish();
                         } else {
