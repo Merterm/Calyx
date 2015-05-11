@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="center"
+        android:background="@color/new_tree_dialog_green"
+        android:contentDescription="@string/app_name"
+        android:text="@string/new_post"
+        android:textColor="@color/white"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"/>
+    <EditText
+        android:id="@+id/new_post_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="@string/title" />
+    <EditText
+        android:id="@+id/new_post_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:hint="@string/description"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/take_photo"
+        android:id="@+id/photo_button"
+        android:background="@color/transparent_toolbar"
+        android:textColor="@color/orange"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/photo_library"
+        android:id="@+id/library_button"
+        android:background="@color/transparent_toolbar"
+        android:textColor="@color/orange"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/upload_file"
+        android:id="@+id/file_button"
+        android:background="@color/transparent_toolbar"
+        android:textColor="@color/orange"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
