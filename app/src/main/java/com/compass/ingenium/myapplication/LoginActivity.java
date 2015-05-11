@@ -19,13 +19,13 @@ package com.compass.ingenium.myapplication;
     import com.android.volley.*;
     import com.android.volley.toolbox.StringRequest;
 
-    import helper.SessionManager;
     import com.android.volley.Request.Method;
     import com.android.volley.Response;
     import com.android.volley.VolleyError;
     import com.android.volley.toolbox.StringRequest;
+    import com.compass.ingenium.myapplication.helper.SessionManager;
 
-    public class LoginActivity extends Activity {
+public class LoginActivity extends Activity {
         // LogCat tag
         private static final String TAG = RegisterActivity.class.getSimpleName();
         private Button btnLogin;

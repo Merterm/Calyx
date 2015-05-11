@@ -22,9 +22,9 @@ import com.android.volley.Request.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.compass.ingenium.myapplication.helper.SQLiteHandler;
+import com.compass.ingenium.myapplication.helper.SessionManager;
 
-import helper.SQLiteHandler;
-import helper.SessionManager;
 
 public class RegisterActivity extends Activity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
@@ -159,7 +159,7 @@ public class RegisterActivity extends Activity {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Registration Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
+                        "What's the error" + error.getMessage(), Toast.LENGTH_LONG).show();
                 hideDialog();
             }
         }) {
