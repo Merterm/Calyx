@@ -13,5 +13,13 @@
     <string name="name">Name</string>
     <string name="title_activity_post">"Postsache "</string>
     <string name="welcome">Willkommen</string>
+    <string name="new_leaf">Das Neues Blatt</string>
+    <string name="new_post"></string>
+    <string name="new_tree">Der Neuer Baum</string>
+    <string name="title">Titel</string>
+    <string name="title_activity_help">Hilfe</string>
+    <string name="title_activity_tree">Der Baum</string>
+    <string name="title_section1">Das Profil</string>
+    <string name="title_activity_drawer">Calyx</string>
 
 </resources>

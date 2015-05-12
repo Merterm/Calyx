@@ -15,5 +15,27 @@
     <string name="title_activity_post">Gönderi</string>
     <string name="welcome">Hoşgeldiniz</string>
     <string name="new_tree">Yeni Ağaç</string>
+    <string name="cancel">İptal</string>
+    <string name="create">Oluştur</string>
+    <string name="description">Açıklama</string>
+    <string name="new_leaf">Yeni Yaprak</string>
+    <string name="notification">Bildirimler</string>
+    <string name="photo_library">Galeriden Seç</string>
+    <string name="take_photo">Fotoğraf ya da Video Çek</string>
+    <string name="title">Başlık</string>
+    <string name="title_activity_help">Yardım</string>
+    <string name="new_post">Yeni Gönderi</string>
+    <string name="title_activity_tree">Ağaç</string>
+    <string name="title_section1">Profil</string>
+    <string name="title_section2">Ayarlar</string>
+    <string name="title_section3">Koru</string>
+    <string name="title_section5">Yapraklar</string>
+    <string name="title_section6">Pigmentler</string>
+    <string name="title_section7">Yardım</string>
+    <string name="title_section8">Hakkında</string>
+    <string name="title_section9">Çıkış</string>
+    <string name="upload_file">Dosya yükle</string>
+    <string name="title_section4">Ağaçlığı Keşfet</string>
+    <string name="title_activity_drawer">Kaliks</string>
 
 </resources>
