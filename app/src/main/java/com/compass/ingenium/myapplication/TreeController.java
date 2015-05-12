@@ -69,7 +69,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
 
-        /*//Floating Action Button
+        //Floating Action Button
         findViewById(R.id.leaf_add_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,7 +79,13 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
 
                 //Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
+        findViewById(R.id.tree_image_fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(TreeController.this, "This is currently unavailable", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -199,7 +205,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.leaf_card, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_tree, container, false);
 
             return rootView;
         }

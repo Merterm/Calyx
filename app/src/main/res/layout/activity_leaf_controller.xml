@@ -16,14 +16,15 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/leaf_main_card"
         android:layout_gravity="center"
-        android:layout_width="360dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
         android:layout_height="370dp"
         android:layout_marginBottom="10dp"
         card_view:cardCornerRadius="1dp"
         card_view:cardElevation="5dp">
 
         <RelativeLayout
-            android:layout_width="360dp"
+            android:layout_width="350dp"
             android:layout_height="370dp">
 
             <com.getbase.floatingactionbutton.FloatingActionsMenu
@@ -62,7 +63,7 @@
             </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
             <ImageView
-                android:layout_width="360dp"
+                android:layout_width="350dp"
                 android:layout_height="200dp"
                 android:background="@drawable/ingenium"
                 android:transitionName="leaf_image"

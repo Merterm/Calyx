@@ -42,7 +42,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:elevation="10dp"
-        fab:fab_expandDirection="left"
+        fab:fab_expandDirection="up"
+        fab:fab_labelsPosition="left"
         fab:fab_addButtonColorNormal="@color/login_yellow"
         fab:fab_addButtonColorPressed="@color/fab_pressed_yellow"
         fab:fab_addButtonPlusIconColor="@color/bg_login">

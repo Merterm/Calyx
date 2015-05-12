@@ -60,16 +60,12 @@ public class GroveRecycler extends RecyclerView.Adapter<GroveRecycler.ViewHolder
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewHolder.cardView.setCardElevation(30);
-                viewHolder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.card_pressed));
                 //getting the card
                 //intent example
                 Intent intent = new Intent(context, TreeController.class);
                 intent.putExtra("tree", groveData.get(i));
                 intent.putExtra("tree_position", i);
                 context.startActivity(intent);
-                viewHolder.cardView.setCardElevation(10);
-                viewHolder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.white));
             }
         });
     }

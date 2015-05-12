@@ -15,13 +15,12 @@ import android.widget.Toast;
 
 import com.compass.ingenium.myapplication.modelclasses.Grove;
 import com.compass.ingenium.myapplication.modelclasses.Leaf;
+import com.compass.ingenium.myapplication.modelclasses.Post;
 import com.compass.ingenium.myapplication.modelclasses.Tree;
 import com.compass.ingenium.myapplication.modelclasses.User;
 
 
 public class GroveController extends ActionBarActivity implements NewTreeDialogFragment.TreeDialogListener{
-
-
 
     // Temporary properties
     static User user = new User("Merterm", "mertincek@hotmail.com", "12345");
@@ -42,8 +41,16 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grove);
 
+        //Leaf properties
+        emptyLeaf.setDescription("I am very lonely!");
+        emptyLeaf.setName("Empty Leaf");
+        emptyLeaf.addMember(user);
+        emptyLeaf.addMember(user);
+        emptyLeaf.addPost(new Post("Title", "description", user, null));
+
         //Tree properties
-        tree.addLeaf( emptyLeaf);
+        tree.addLeaf(emptyLeaf);
+        tree.addLeaf(emptyLeaf);
         tree2.addLeaf(emptyLeaf);
         tree.setTreeImageID(R.drawable.tree1);
         tree2.setTreeImageID(R.drawable.tree2);
