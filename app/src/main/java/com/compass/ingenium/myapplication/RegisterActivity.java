@@ -159,8 +159,12 @@ public class RegisterActivity extends Activity {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Registration Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
-                        "What's the error" + error.getMessage(), Toast.LENGTH_LONG).show();
+                        "Starting DEMO" /*+ error.getMessage(),*/, Toast.LENGTH_LONG).show();
                 hideDialog();
+                Intent intent2 = new Intent(
+                        RegisterActivity.this,
+                        GroveController.class);
+                startActivity(intent2);
             }
         }) {
 

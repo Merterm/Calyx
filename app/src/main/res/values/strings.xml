@@ -5,7 +5,7 @@
     <string name="hint_password">Password</string>
     <string name="hint_name">Fullname</string>
     <string name="btn_login">LOGIN</string>
-    <string name="btn_register">REGISTER</string>
+    <string name="btn_register">REGISTER (DEMO START)</string>
     <string name="btn_link_to_register">Not a Member? Sign up</string>
     <string name="btn_link_to_login">Already registered? Login</string>
     <string name="welcome">Welcome</string>
