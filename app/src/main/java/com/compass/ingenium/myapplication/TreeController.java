@@ -65,7 +65,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle( tree.getTitle());
+        toolbar.setTitle(tree.getTitle());
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
 
@@ -80,13 +80,6 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
                 //Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
             }
         });
-        findViewById(R.id.tree_image_fab).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(TreeController.this, "This is currently unavailable", Toast.LENGTH_SHORT).show();
-            }
-        });
-
     }
 
 
@@ -128,6 +121,12 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
             tree.addLeaf(createdLeaf);
             NewLeafDialogFragment.newLeafTitle = null;
             NewLeafDialogFragment.newLeafDescription= null;
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mSectionsPagerAdapter.notifyDataSetChanged();
+                }
+            });
         }
         else {
             Toast.makeText(getApplicationContext(),

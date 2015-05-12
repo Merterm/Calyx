@@ -43,10 +43,9 @@ public class LeafController extends ActionBarActivity {
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(leaf.getName());
-        toolbar.setTitleTextColor(getResources().getColor(R.color.login_yellow));
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-        }
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        setSupportActionBar(toolbar);
+
 
         //Recycler
         recyclerView = (RecyclerView) findViewById(R.id.post_recycler_view);
@@ -57,6 +56,12 @@ public class LeafController extends ActionBarActivity {
         recyclerView.setAdapter(adapter);
 
         //Leaf properties
+        TextView creatorText = (TextView) findViewById(R.id.leaf_main_creator);
+        TextView descriptionText = (TextView) findViewById(R.id.leaf_main_description);
+        TextView memberText = (TextView) findViewById(R.id.leaf_main_member);
+        creatorText.setText(leaf.getCreator().getUsername());
+        descriptionText.setText(leaf.getDescription());
+        memberText.setText(leaf.getMembers().size() + " Members");
 
         //Floating action button interaction
         findViewById(R.id.add_post_fab).setOnClickListener(new View.OnClickListener() {

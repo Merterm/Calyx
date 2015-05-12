@@ -16,7 +16,6 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/leaf_main_card"
         android:layout_gravity="center"
-        android:layout_centerHorizontal="true"
         android:layout_width="350dp"
         android:layout_height="370dp"
         android:layout_marginBottom="10dp"
@@ -36,7 +35,7 @@
                 fab:fab_addButtonColorNormal="@color/actionbar_blue"
                 fab:fab_addButtonColorPressed="@color/navigation_bar_blue"
                 fab:fab_addButtonPlusIconColor="@color/white"
-                android:layout_alignBottom="@+id/creator_item"
+                android:layout_alignBottom="@+id/leaf_main_creator"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true">
 
@@ -72,7 +71,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/title_item"
+                android:id="@+id/leaf_main_title"
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:textSize="@dimen/abc_text_size_title_material"
                 android:fontFamily="sans-serif-medium"
@@ -87,37 +86,37 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/creator_item"
+                android:id="@+id/leaf_main_creator"
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:textSize="@dimen/abc_text_size_body_1_material"
                 android:fontFamily="sans-serif-regular"
                 android:layout_marginTop="14dp"
                 android:layout_below="@+id/image_item"
-                android:layout_alignLeft="@+id/title_item"
-                android:layout_alignStart="@+id/title_item" />
+                android:layout_alignLeft="@+id/leaf_main_title"
+                android:layout_alignStart="@+id/leaf_main_title" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/description_item"
+                android:id="@+id/leaf_main_description"
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:textSize="@dimen/abc_text_size_body_2_material"
                 android:fontFamily="sans-serif-light"
-                android:layout_below="@+id/creator_item"
-                android:layout_alignLeft="@+id/creator_item"
-                android:layout_alignStart="@+id/creator_item" />
+                android:layout_below="@+id/leaf_main_creator"
+                android:layout_alignLeft="@+id/leaf_main_creator"
+                android:layout_alignStart="@+id/leaf_main_creator" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/leaf_number_item"
+                android:id="@+id/leaf_main_member"
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:textSize="@dimen/abc_text_size_body_2_material"
                 android:fontFamily="sans-serif-condensed"
                 android:textStyle="bold"
-                android:layout_below="@+id/description_item"
-                android:layout_alignLeft="@+id/description_item"
-                android:layout_alignStart="@+id/description_item" />
+                android:layout_below="@+id/leaf_main_description"
+                android:layout_alignLeft="@+id/leaf_main_description"
+                android:layout_alignStart="@+id/leaf_main_description" />
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
