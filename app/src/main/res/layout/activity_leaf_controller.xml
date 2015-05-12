@@ -16,17 +16,17 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/leaf_main_card"
         android:layout_gravity="center"
-        android:layout_width="350dp"
+        android:layout_width="360dp"
         android:layout_height="370dp"
         android:layout_marginBottom="10dp"
         card_view:cardCornerRadius="1dp"
         card_view:cardElevation="5dp">
 
         <RelativeLayout
-            android:layout_width="350dp"
+            android:layout_width="360dp"
             android:layout_height="370dp">
 
-            <com.getbase.floatingactionbutton.FloatingActionsMenu
+            <!--<com.getbase.floatingactionbutton.FloatingActionsMenu
                 xmlns:fab="http://schemas.android.com/apk/res-auto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,9 +47,10 @@
                     fab:fab_colorNormal="@color/login_yellow"
                     fab:fab_plusIconColor="@color/bg_login"
                     fab:fab_colorPressed="@color/fab_pressed_yellow"
-                    fab:fab_title="Change the Leaf Image"/>
+                    fab:fab_title="Change the Leaf Image"/>-->
 
                 <com.getbase.floatingactionbutton.AddFloatingActionButton
+                    xmlns:fab="http://schemas.android.com/apk/res-auto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
@@ -57,16 +58,20 @@
                     fab:fab_colorNormal="@color/login_yellow"
                     fab:fab_plusIconColor="@color/bg_login"
                     fab:fab_colorPressed="@color/fab_pressed_yellow"
-                    fab:fab_title="Add a Post"/>
+                    fab:fab_title="Add a Post"
+                    android:layout_above="@+id/leaf_main_description"
+                    android:layout_alignParentEnd="true" />
 
-            </com.getbase.floatingactionbutton.FloatingActionsMenu>
+            <!--</com.getbase.floatingactionbutton.FloatingActionsMenu>-->
 
             <ImageView
-                android:layout_width="350dp"
+                android:layout_width="360dp"
                 android:layout_height="200dp"
                 android:background="@drawable/ingenium"
                 android:transitionName="leaf_image"
-                android:id="@+id/image_item"/>
+                android:id="@+id/image_item"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -45,6 +45,7 @@
             android:background="@color/register_background"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
+            android:fontFamily="sans-serif-regular"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/input_login"

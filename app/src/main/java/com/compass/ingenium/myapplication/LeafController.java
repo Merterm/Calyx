@@ -25,7 +25,7 @@ import com.compass.ingenium.myapplication.modelclasses.Post;
 import java.util.ArrayList;
 
 
-public class LeafController extends ActionBarActivity {
+public class LeafController extends ActionBarActivity implements NewPostDialogFragment.PostDialogListener{
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -68,8 +68,8 @@ public class LeafController extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 // Create an instance of the dialog fragment and show it
-                /*DialogFragment dialog = new NewTreeDialogFragment();
-                dialog.show(getSupportFragmentManager(), "NewTreeDialogFragment");*/
+                DialogFragment dialog = new NewPostDialogFragment();
+                dialog.show(getSupportFragmentManager(), "NewPostDialogFragment");
                 Toast.makeText(LeafController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
             }
         });
@@ -95,6 +95,33 @@ public class LeafController extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        if ( !NewPostDialogFragment.newPostTitle.equals("") && !NewPostDialogFragment.newPostDescription.equals("")) {
+            Toast.makeText(getApplicationContext(), "Your post is attached to the Leaf", Toast.LENGTH_LONG)
+                    .show();
+
+            //Instantiating the post
+            Post createdPost = new Post(NewPostDialogFragment.newPostTitle,
+                    NewPostDialogFragment.newPostDescription, GroveController.user, null);
+
+            //Adding the post to the leaf
+            leaf.addPost(createdPost);
+            NewPostDialogFragment.newPostTitle = null;
+            NewPostDialogFragment.newPostDescription= null;
+        }
+        else {
+            Toast.makeText(getApplicationContext(),
+                    "Please enter the title and description!", Toast.LENGTH_LONG)
+                    .show();
+        }
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+
     }
 
     /**PostRecycler for the Leaf Page**/
