@@ -47,6 +47,7 @@ public class LeafController extends ActionBarActivity implements NewPostDialogFr
         setSupportActionBar(toolbar);
 
 
+
         //Recycler
         recyclerView = (RecyclerView) findViewById(R.id.post_recycler_view);
         //recyclerView.setHasFixedSize(true);

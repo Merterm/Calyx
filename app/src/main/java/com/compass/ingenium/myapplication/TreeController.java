@@ -222,6 +222,8 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
             imageView = (ImageView) getActivity().findViewById(R.id.leaf_image);
             cardView = (CardView) getActivity().findViewById(R.id.leaf_in_tree_card);
             memberFab = (AddFloatingActionButton) getActivity().findViewById(R.id.member_add);
+            //TODO ADD NOTIFY DATA SET CHANGE
+
 
             //Setting the background of the tree to the tree image
             if(tree.getTreeImageID() == R.drawable.tree1)
