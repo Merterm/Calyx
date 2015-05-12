@@ -15,6 +15,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -45,7 +46,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
     ViewPager mViewPager;
 
     Tree tree;
-    ArrayList leafs;
+    static ArrayList<Leaf> leafs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,12 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        //Floating Action Button
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle( tree.getTitle());
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        setSupportActionBar(toolbar);
+
+        /*//Floating Action Button
         findViewById(R.id.leaf_add_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +79,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
 
                 //Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
     }
 
@@ -144,7 +150,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return LeafFragment.newInstance(position + 1,leafs, tree);
+            return LeafFragment.newInstance(position + 1, tree);
         }
 
         @Override
@@ -168,20 +174,18 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
-        private static ArrayList<Leaf> leafs;
         private static Tree tree;
         private static int sectionNumber;
-        private TextView titleView, membersView, descriptionView;
-        private ImageView imageView;
-        private CardView cardView;
+        private static TextView titleView, membersView, descriptionView;
+        private static ImageView imageView;
+        private static CardView cardView;
 
         /**
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static LeafFragment newInstance(int sectionNumber, ArrayList<Leaf> leafs, Tree tree) {
+        public static LeafFragment newInstance(int sectionNumber, Tree tree) {
             LeafFragment.sectionNumber = sectionNumber;
-            LeafFragment.leafs = leafs;
             LeafFragment.tree = tree;
             LeafFragment fragment = new LeafFragment();
             Bundle args = new Bundle();
@@ -195,14 +199,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_tree, container, false);
-
-            //Getting the properties of the card
-            titleView =  (TextView) rootView.findViewById(R.id.leaf_title);
-            membersView = (TextView) rootView.findViewById(R.id.members);
-            descriptionView = (TextView) rootView.findViewById(R.id.leaf_description);
-            imageView = (ImageView) rootView.findViewById(R.id.leaf_image);
-            cardView = (CardView) rootView.findViewById(R.id.leaf_in_tree_card);
+            View rootView = inflater.inflate(R.layout.leaf_card, container, false);
 
             return rootView;
         }
@@ -210,6 +207,13 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
+
+            //Getting the properties of the card
+            titleView =  (TextView) getActivity().findViewById(R.id.leaf_title);
+            membersView = (TextView) getActivity().findViewById(R.id.members);
+            descriptionView = (TextView) getActivity().findViewById(R.id.leaf_description);
+            imageView = (ImageView) getActivity().findViewById(R.id.leaf_image);
+            cardView = (CardView) getActivity().findViewById(R.id.leaf_in_tree_card);
 
             //Setting the background of the tree to the tree image
             if(tree.getTreeImageID() == R.drawable.tree1)

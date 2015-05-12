@@ -17,6 +17,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="new_tree">New Tree</string>
+    <string name="new_post">New Post</string>
+    <string name="take_photo">Take a Photo or Video</string>
+    <string name="photo_library">Choose From Gallery</string>
+    <string name="notification">Notifications</string>
+    <string name="upload_file">Upload a File</string>
     <string name="new_leaf">New Leaf</string>
     <string name="title">Title</string>
     <string name="description">Description</string>

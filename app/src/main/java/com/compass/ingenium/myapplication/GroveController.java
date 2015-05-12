@@ -47,10 +47,13 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         tree2.addLeaf(emptyLeaf);
         tree.setTreeImageID(R.drawable.tree1);
         tree2.setTreeImageID(R.drawable.tree2);
+        Tree temp = new Tree(user, "Temp", "temp");
+        temp.setTreeImageID(R.drawable.tree1);
 
         //Grove Properties
-        grove.addTree( tree);
+        grove.addTree(tree);
         grove.addTree( tree2);
+        grove.addTree( temp);
 
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -122,6 +125,7 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
                 createdTree.setTreeImageID(R.drawable.tree2);
 
             //Adding the tree to the grove
+            grove.addTree(createdTree);
             grove.addTree(createdTree);
             NewTreeDialogFragment.newTreeTitle = null;
             NewTreeDialogFragment.newTreeDescription= null;
