@@ -55,9 +55,9 @@
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
                     android:id="@+id/add_post_fab"
-                    fab:fab_colorNormal="@color/login_yellow"
-                    fab:fab_plusIconColor="@color/bg_login"
-                    fab:fab_colorPressed="@color/fab_pressed_yellow"
+                    fab:fab_colorNormal="@color/actionbar_blue"
+                    fab:fab_plusIconColor="@color/white"
+                    fab:fab_colorPressed="@color/navigation_bar_blue"
                     fab:fab_title="Add a Post"
                     android:layout_above="@+id/leaf_main_description"
                     android:layout_alignParentEnd="true" />
