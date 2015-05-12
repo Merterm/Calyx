@@ -15,5 +15,15 @@
     <string name="title_activity_post">Le post</string>
     <string name="welcome">Bienvenue</string>
     <string name="new_tree">L\'Arbre Nouveau</string>
+    <string name="description">Déscription</string>
+    <string name="navigation_drawer_open"></string>
+    <string name="new_leaf">Nouvelle Feuille</string>
+    <string name="title">Titre</string>
+    <string name="title_section1">Le Profil</string>
+    <string name="title_activity_tree">L\'Arbre</string>
+    <string name="title_section5">Les Feuilles</string>
+    <string name="title_section6">Les Pigments</string>
+    <string name="new_post">Nouveau Poste</string>
+    <string name="title_activity_drawer">Calyx</string>
 
 </resources>
