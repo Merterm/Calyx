@@ -26,6 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.compass.ingenium.myapplication.modelclasses.Leaf;
 import com.compass.ingenium.myapplication.modelclasses.Tree;
+import com.getbase.floatingactionbutton.AddFloatingActionButton;
 
 
 public class TreeController extends ActionBarActivity implements NewLeafDialogFragment.LeafDialogListener{
@@ -184,6 +185,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         private static TextView titleView, membersView, descriptionView;
         private static ImageView imageView;
         private static CardView cardView;
+        private static AddFloatingActionButton memberFab;
 
         /**
          * Returns a new instance of this fragment for the given section
@@ -219,6 +221,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
             descriptionView = (TextView) getActivity().findViewById(R.id.leaf_description);
             imageView = (ImageView) getActivity().findViewById(R.id.leaf_image);
             cardView = (CardView) getActivity().findViewById(R.id.leaf_in_tree_card);
+            memberFab = (AddFloatingActionButton) getActivity().findViewById(R.id.member_add);
 
             //Setting the background of the tree to the tree image
             if(tree.getTreeImageID() == R.drawable.tree1)
@@ -245,6 +248,16 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
                     ActivityOptions options = ActivityOptions
                             .makeSceneTransitionAnimation(getActivity(), imageView, "leaf_image");
                     startActivity(intent /*options.toBundle()*/);
+                }
+            });
+
+            //Adding onClicklistener to the member fab
+            memberFab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (!leafs.get(sectionNumber - 1).getMembers().contains(GroveController.user)) {
+                        leafs.get(sectionNumber - 1).addMember(GroveController.user);
+                    }
                 }
             });
         }
