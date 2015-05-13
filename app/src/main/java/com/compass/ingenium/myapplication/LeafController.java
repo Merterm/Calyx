@@ -110,6 +110,7 @@ public class LeafController extends ActionBarActivity implements NewPostDialogFr
 
             //Adding the post to the leaf
             leaf.addPost(createdPost);
+            adapter.notifyDataSetChanged();
             NewPostDialogFragment.newPostTitle = null;
             NewPostDialogFragment.newPostDescription= null;
         }

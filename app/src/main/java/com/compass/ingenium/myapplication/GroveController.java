@@ -60,6 +60,30 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         mathLeaf1.addMember(user);
         mathLeaf1.addPost(new Post("Title", "description", user, null));
 
+        //Leaf properties
+        mathLeaf2.setDescription("You can see every research about Integrals here");
+        mathLeaf2.setName("Integral");
+        mathLeaf2.addMember(user);
+        mathLeaf2.addMember(user);
+        mathLeaf2.setLeafImageId(R.drawable.group_image1);
+        mathLeaf2.addPost(new Post("Title", "description", user, null));
+
+        //Leaf properties
+        mathLeaf3.setDescription("You can see every research about Integrals here");
+        mathLeaf3.setName("Integral");
+        mathLeaf3.addMember(user);
+        mathLeaf3.addMember(user);
+        mathLeaf3.setLeafImageId(R.drawable.group_image2);
+        mathLeaf3.addPost(new Post("Title", "description", user, null));
+
+        //Leaf properties
+        mathLeaf4.setDescription("You can see every research about Integrals here");
+        mathLeaf4.setName("Integral");
+        mathLeaf4.addMember(user);
+        mathLeaf4.addMember(user);
+        mathLeaf4.setLeafImageId(R.drawable.group_image3);
+        mathLeaf4.addPost(new Post("Title", "description", user, null));
+
         //Tree properties
         tree.addLeaf(mathLeaf1);
         tree.addLeaf(mathLeaf2);
@@ -87,11 +111,9 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
 
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle( "Grove");
+        toolbar.setTitle("Grove");
         toolbar.setTitleTextColor( getResources().getColor(R.color.white));
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-        }
+        setSupportActionBar(toolbar);
 
         //Recycler
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -155,7 +177,6 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
                 createdTree.setTreeImageID(R.drawable.tree2);
 
             //Adding the tree to the grove
-            grove.addTree(createdTree);
             grove.addTree(createdTree);
             NewTreeDialogFragment.newTreeTitle = null;
             NewTreeDialogFragment.newTreeDescription= null;
