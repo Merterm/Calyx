@@ -155,11 +155,15 @@ public class RegisterActivity extends Activity {
             }
         }, new Response.ErrorListener() {
 
+
+            //IMPORTANT COMMENT:
+            //Because we cannot solve why are we always get an errorResponse, we created
+            //a dummy login to directly access the DEMO, without any configuration.
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Registration Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
-                        "Starting DEMO" /*+ error.getMessage(),*/, Toast.LENGTH_LONG).show();
+                        "Starting DEMO" , Toast.LENGTH_LONG).show();
                 hideDialog();
                 Intent intent2 = new Intent(
                         RegisterActivity.this,
