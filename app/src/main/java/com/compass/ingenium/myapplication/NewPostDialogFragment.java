@@ -29,6 +29,7 @@ import java.util.Date;
 public class NewPostDialogFragment extends DialogFragment {
 
     static String newPostTitle, newPostDescription;
+    static File newPostImage;
     String mCurrentPhotoPath;
     ImageView mImageView;
     final int REQUEST_TAKE_PHOTO = 1;
@@ -73,6 +74,7 @@ public class NewPostDialogFragment extends DialogFragment {
 
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = "file:" + image.getAbsolutePath();
+        newPostImage = image;
         return image;
     }
 

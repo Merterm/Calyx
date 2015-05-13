@@ -25,9 +25,21 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
     // Temporary properties
     static User user = new User("Merterm", "mertincek@hotmail.com", "12345");
     Grove grove = new Grove();
-    Leaf emptyLeaf = new Leaf(user);
-    Tree tree = new Tree( user, "Temporary Tree", "This tree has been created temporarily.");
-    Tree tree2 = new Tree( user, "Mert's Tree");
+    Leaf mathLeaf1 = new Leaf(user);
+    Leaf mathLeaf2 = new Leaf(user);
+    Leaf mathLeaf3 = new Leaf(user);
+    Leaf mathLeaf4 = new Leaf(user);
+    Leaf csLeaf = new Leaf(user);
+    Leaf scienceLeaf = new Leaf(user);
+    Leaf quantumLeaf = new Leaf(user);
+    Leaf masterLeaf = new Leaf(user);
+    Leaf bioLeaf = new Leaf(user);
+    Tree tree = new Tree( user, "Mathematics Topics", "Let's learn Maths together!");
+    Tree tree2 = new Tree( user, "CS102 Projects", "You can reach all the projects, here!");
+    Tree tree3 = new Tree( user, "Science Fair", "Upload your science projects to this tree!");
+    Tree tree4 = new Tree( user, "Quantum Computing", "Putting quanta to your computer");
+    Tree tree5 = new Tree( user, "Bioinformatics Co");
+    Tree tree6 = new Tree( user, "Mr. Forringthon's Master Students", "I will check your projects from here!");
 
     //Properties
     private RecyclerView recyclerView;
@@ -42,25 +54,36 @@ public class GroveController extends ActionBarActivity implements NewTreeDialogF
         setContentView(R.layout.activity_grove);
 
         //Leaf properties
-        emptyLeaf.setDescription("I am very lonely!");
-        emptyLeaf.setName("Empty Leaf");
-        emptyLeaf.addMember(user);
-        emptyLeaf.addMember(user);
-        emptyLeaf.addPost(new Post("Title", "description", user, null));
+        mathLeaf1.setDescription("You can see every research about Integrals here");
+        mathLeaf1.setName("Integral");
+        mathLeaf1.addMember(user);
+        mathLeaf1.addMember(user);
+        mathLeaf1.addPost(new Post("Title", "description", user, null));
 
         //Tree properties
-        tree.addLeaf(emptyLeaf);
-        tree.addLeaf(emptyLeaf);
-        tree2.addLeaf(emptyLeaf);
+        tree.addLeaf(mathLeaf1);
+        tree.addLeaf(mathLeaf2);
+        tree.addLeaf(mathLeaf3);
+        tree.addLeaf(mathLeaf4);
+        tree2.addLeaf(csLeaf);
+        tree3.addLeaf(scienceLeaf);
+        tree4.addLeaf(quantumLeaf);
+        tree5.addLeaf(bioLeaf);
+        tree6.addLeaf(masterLeaf);
         tree.setTreeImageID(R.drawable.tree1);
         tree2.setTreeImageID(R.drawable.tree2);
-        Tree temp = new Tree(user, "Temp", "temp");
-        temp.setTreeImageID(R.drawable.tree1);
+        tree3.setTreeImageID(R.drawable.tree1);
+        tree4.setTreeImageID(R.drawable.tree2);
+        tree5.setTreeImageID(R.drawable.tree1);
+        tree6.setTreeImageID(R.drawable.tree2);
 
         //Grove Properties
         grove.addTree(tree);
         grove.addTree( tree2);
-        grove.addTree( temp);
+        grove.addTree( tree3);
+        grove.addTree( tree4);
+        grove.addTree( tree5);
+        grove.addTree( tree6);
 
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

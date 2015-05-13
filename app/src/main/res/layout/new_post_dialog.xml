@@ -43,7 +43,8 @@
         android:id="@+id/photo_button"
         android:background="@color/transparent_toolbar"
         android:textColor="@color/orange"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:clickable="false" />
 
     <Button
         android:layout_width="match_parent"
