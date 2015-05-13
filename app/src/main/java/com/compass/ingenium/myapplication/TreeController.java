@@ -48,6 +48,10 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
 
     Tree tree;
     static ArrayList<Leaf> leafs;
+    private static TextView titleView, membersView, descriptionView;
+    private static ImageView imageView;
+    private static CardView cardView;
+    private static AddFloatingActionButton memberFab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +83,59 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
                 dialog.show(getSupportFragmentManager(), "NewLeafDialogFragment");
 
                 //Toast.makeText(GroveController.this, "Clicked Floating Action Button", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //Getting the properties of the card
+        titleView =  (TextView)findViewById(R.id.leaf_title);
+        membersView = (TextView) findViewById(R.id.members);
+        descriptionView = (TextView) findViewById(R.id.leaf_description);
+        imageView = (ImageView)findViewById(R.id.leaf_image);
+        cardView = (CardView)findViewById(R.id.leaf_in_tree_card);
+        memberFab = (AddFloatingActionButton)findViewById(R.id.member_add);
+
+
+        //Setting the background of the tree to the tree image
+        if(tree.getTreeImageID() == R.drawable.tree1)
+            findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree1));
+        else if(tree.getTreeImageID() == R.drawable.tree2)
+            findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree2));
+
+        //Changing the properties according to leaf
+        Toast.makeText(getApplicationContext(), leafs.get(LeafFragment.sectionNumber-1).getName(), Toast.LENGTH_LONG).show();
+        titleView.setText(leafs.get(LeafFragment.sectionNumber-1).getName());
+        descriptionView.setText(leafs.get(LeafFragment.sectionNumber-1).getDescription());
+        membersView.setText(leafs.get(LeafFragment.sectionNumber-1).getMembers().size() + " Members");
+        imageView.setBackground(getResources().getDrawable(R.drawable.ingenium));
+
+        //Adding an onclicklistener to the card
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TreeController.this, LeafController.class);
+                intent.putExtra("leaf", leafs.get(LeafFragment.sectionNumber-1));
+                // create the transition animation - the images in the layouts
+                // of both activities are defined with android:transitionName="robot"
+                ActivityOptions options = ActivityOptions
+                        .makeSceneTransitionAnimation(TreeController.this, imageView, "leaf_image");
+                startActivity(intent /*options.toBundle()*/);
+            }
+        });
+
+        //Adding onClicklistener to the member fab
+        memberFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!leafs.get(LeafFragment.sectionNumber - 1).getMembers().contains(GroveController.user)) {
+                    leafs.get(LeafFragment.sectionNumber - 1).addMember(GroveController.user);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mSectionsPagerAdapter.notifyDataSetChanged();
+                        }
+                    });
+                }
             }
         });
     }
@@ -169,6 +226,11 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         public CharSequence getPageTitle(int position) {
             return "Leaf " + (position + 1);
         }
+
+        @Override
+        public int getItemPosition(Object object) {
+            return
+        }
     }
 
     /**
@@ -182,10 +244,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         private static final String ARG_SECTION_NUMBER = "section_number";
         private static Tree tree;
         private static int sectionNumber;
-        private static TextView titleView, membersView, descriptionView;
-        private static ImageView imageView;
-        private static CardView cardView;
-        private static AddFloatingActionButton memberFab;
+
 
         /**
          * Returns a new instance of this fragment for the given section
@@ -207,62 +266,7 @@ public class TreeController extends ActionBarActivity implements NewLeafDialogFr
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_tree, container, false);
-
             return rootView;
         }
-
-        @Override
-        public void onViewCreated(View view, Bundle savedInstanceState) {
-            super.onViewCreated(view, savedInstanceState);
-
-            //Getting the properties of the card
-            titleView =  (TextView) getActivity().findViewById(R.id.leaf_title);
-            membersView = (TextView) getActivity().findViewById(R.id.members);
-            descriptionView = (TextView) getActivity().findViewById(R.id.leaf_description);
-            imageView = (ImageView) getActivity().findViewById(R.id.leaf_image);
-            cardView = (CardView) getActivity().findViewById(R.id.leaf_in_tree_card);
-            memberFab = (AddFloatingActionButton) getActivity().findViewById(R.id.member_add);
-            //TODO ADD NOTIFY DATA SET CHANGE
-
-
-            //Setting the background of the tree to the tree image
-            if(tree.getTreeImageID() == R.drawable.tree1)
-                getActivity().findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree1));
-            else if(tree.getTreeImageID() == R.drawable.tree2)
-                getActivity().findViewById(R.id.pager).setBackground(getResources().getDrawable(R.drawable.tree2));
-
-            //Changing the properties according to leaf
-            Toast.makeText(getActivity().getApplicationContext(), leafs.get(sectionNumber-1).getName(), Toast.LENGTH_LONG).show();
-            titleView.setText(leafs.get(sectionNumber-1).getName());
-            descriptionView.setText(leafs.get(sectionNumber-1).getDescription());
-            membersView.setText(leafs.get(sectionNumber-1).getMembers().size() + " Members");
-            imageView.setBackground(getActivity().getResources().getDrawable(R.drawable.ingenium));
-
-            //Adding an onclicklistener to the card
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getActivity(), LeafController.class);
-                    intent.putExtra("leaf", leafs.get(sectionNumber-1));
-                    // create the transition animation - the images in the layouts
-                    // of both activities are defined with android:transitionName="robot"
-                    ActivityOptions options = ActivityOptions
-                            .makeSceneTransitionAnimation(getActivity(), imageView, "leaf_image");
-                    startActivity(intent /*options.toBundle()*/);
-                }
-            });
-
-            //Adding onClicklistener to the member fab
-            memberFab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (!leafs.get(sectionNumber - 1).getMembers().contains(GroveController.user)) {
-                        leafs.get(sectionNumber - 1).addMember(GroveController.user);
-                    }
-                }
-            });
-        }
     }
-
 }
