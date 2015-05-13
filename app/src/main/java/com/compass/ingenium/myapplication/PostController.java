@@ -12,32 +12,27 @@ import android.widget.ImageView;
 import com.compass.ingenium.myapplication.modelclasses.Post;
 
 
-public class PostController extends ActionBarActivity implements NewPostDialogFragment.PostDialogListener{
+public class PostController extends ActionBarActivity {
 
     //properties
     Post post;
+    EditText descriptionView;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+        descriptionView = (EditText) findViewById(R.id.post_main_description);
+        imageView = (ImageView) findViewById(R.id.post_main_image);
 
         post = (Post) getIntent().getSerializableExtra("post");
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.post_toolbar);
         toolbar.setTitle(post.getTitle());
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
 
-    }
-
-    @Override
-    public void onDialogPositiveClick(DialogFragment dialog) {
-
-
-    }
-
-    @Override
-    public void onDialogNegativeClick(DialogFragment dialog) {
-
+        descriptionView.setText(post.getDescription());
+        imageView.setImageBitmap(NewPostDialogFragment.tempBitmap);
     }
 }

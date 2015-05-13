@@ -32,6 +32,7 @@ public class NewPostDialogFragment extends DialogFragment {
     static File newPostImage;
     String mCurrentPhotoPath;
     ImageView mImageView;
+    static Bitmap tempBitmap;
     final int REQUEST_TAKE_PHOTO = 1;
 
     /* The activity that creates an instance of this dialog fragment must
@@ -147,7 +148,7 @@ public class NewPostDialogFragment extends DialogFragment {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             mImageView.setImageBitmap(imageBitmap);
-
+            tempBitmap = imageBitmap;
         }
     }
 }
