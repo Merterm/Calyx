@@ -91,6 +91,7 @@ public class NewPostDialogFragment extends DialogFragment {
 
         final EditText titleBox = (EditText)v.findViewById(R.id.new_post_title);
         final EditText descriptionBox = (EditText)v.findViewById(R.id.new_post_description);
+
         Button photoButton = (Button) v.findViewById(R.id.photo_button);
         Button libraryButton = (Button) v.findViewById(R.id.library_button);
         Button fileButton = (Button) v.findViewById(R.id.file_button);
